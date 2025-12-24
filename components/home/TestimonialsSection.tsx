@@ -27,7 +27,7 @@ const testimonials = [
 
 const TestimonialsSection = () => {
   return (
-    <section className="section-padding bg-dark-50">
+    <section className="p-10 bg-dark-50">
       <div className="container-custom">
         {/* Section Header */}
         <div className="text-center mb-12">
@@ -46,10 +46,7 @@ const TestimonialsSection = () => {
               key={testimonial.id}
               className="card p-6 relative"
             >
-              {/* Quote Icon */}
-              <div className="absolute top-6 right-6 text-primary/20">
-                <Quote className="w-12 h-12 fill-current" />
-              </div>
+              
 
               {/* Content */}
               <p className="text-zinc-300 mb-6 relative z-10 leading-relaxed">
@@ -76,11 +73,8 @@ const TestimonialsSection = () => {
         </div>
 
         {/* Company Logos */}
-        <div className="mt-16 pt-12 border-t border-zinc-800">
-          <p className="text-center text-zinc-400 mb-8">
-            Our students work at top companies worldwide
-          </p>
-          <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12 opacity-50">
+        <div className="mt-16 pt-12 border-t border-zinc-800">         
+          <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12 opacity-100">
             <span className="text-2xl font-bold text-zinc-600">Google</span>
             <span className="text-2xl font-bold text-zinc-600">Meta</span>
             <span className="text-2xl font-bold text-zinc-600">Amazon</span>

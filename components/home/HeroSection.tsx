@@ -5,11 +5,30 @@ import Button from "@/components/ui/Button";
 const HeroSection = () => {
   return (
     <section className="relative py-20 md:py-5 overflow-hidden">
-      {/* Enhanced Background Effects */}
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-primary/20 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-blue-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "1s" }} />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-gradient-to-b from-transparent via-primary/5 to-transparent" />
+      {/* Modern Minimal Background Effects */}
+      <div className="absolute inset-0 -z-10 overflow-hidden">
+        {/* Gradient Mesh */}
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-blue-500/5" />
+        
+        {/* Animated Orbs - Subtle and Slow */}
+        <div 
+          className="absolute top-[20%] left-[15%] w-[500px] h-[500px] bg-primary/8 rounded-full blur-[100px] animate-float-slow"
+          style={{ animationDuration: "20s" }}
+        />
+        <div 
+          className="absolute bottom-[15%] right-[10%] w-[400px] h-[400px] bg-blue-500/6 rounded-full blur-[100px] animate-float-slow"
+          style={{ animationDuration: "25s", animationDelay: "5s" }}
+        />
+        <div 
+          className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-purple-500/4 rounded-full blur-[80px] animate-float-slow"
+          style={{ animationDuration: "30s", animationDelay: "10s" }}
+        />
+        
+        {/* Subtle Grid Pattern */}
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:64px_64px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,black,transparent)]" />
+        
+        {/* Radial Gradient Overlay */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,transparent_0%,rgba(0,0,0,0.3)_100%)]" />
       </div>
 
       <div className="container-custom">
@@ -66,12 +85,12 @@ const HeroSection = () => {
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </Link>
-              <Link href="#preview">
+              {/* <Link href="#preview">
                 <Button variant="outline" size="lg" className="group">
                   <PlayCircle className="w-5 h-5 group-hover:scale-110 transition-transform" />
                   Watch Demo
                 </Button>
-              </Link>
+              </Link> */}
             </div>
 
             {/* Student Avatars & Social Proof */}
@@ -102,31 +121,25 @@ const HeroSection = () => {
 
           {/* Right Content - Stats & Preview */}
           <div className="relative animate-slide-up" style={{ animationDelay: "0.2s" }}>
-            {/* Video Preview Card */}
+            {/* Image Preview Card */}
             <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-zinc-900 to-zinc-800 border border-zinc-700 shadow-2xl group hover:border-primary/50 transition-all duration-300">
-              <div className="aspect-video bg-gradient-to-br from-primary/20 via-blue-500/20 to-purple-500/20 flex items-center justify-center relative overflow-hidden">
-                {/* Animated background pattern */}
-                <div className="absolute inset-0 opacity-10">
-                  <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[length:24px_24px]"></div>
-                </div>
-                
-                <div className="relative z-10 text-center">
-                  <div className="w-20 h-20 rounded-full bg-primary/20 backdrop-blur-sm border border-primary/30 flex items-center justify-center mb-4 mx-auto group-hover:scale-110 transition-transform cursor-pointer">
-                    <PlayCircle className="w-10 h-10 text-primary" />
-                  </div>
-                  <p className="text-sm font-semibold text-zinc-300">Watch Course Preview</p>
-                  <p className="text-xs text-zinc-500 mt-1">2:30 min</p>
-                </div>
+              <div className="aspect-video relative overflow-hidden">
+                {/* App Mockup Image */}
+                <img 
+                  src="/assets/appMockup.png" 
+                  alt="LMS Platform Preview" 
+                  className="w-full h-full object-cover"
+                />
               </div>
               
               {/* Course Info Overlay */}
               <div className="p-4 bg-dark-50/80 backdrop-blur-sm border-t border-zinc-700">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2">
-                    <BookOpen className="w-4 h-4 text-primary" />
-                    <span className="text-sm font-medium">150+ Courses</span>
                   </div>
                   <div className="flex items-center gap-2">
+                    <BookOpen className="w-4 h-4 text-primary" />
+                    <span className="text-sm font-medium">150+ Courses</span>
                     <Clock className="w-4 h-4 text-primary" />
                     <span className="text-sm font-medium">500+ Hours</span>
                   </div>

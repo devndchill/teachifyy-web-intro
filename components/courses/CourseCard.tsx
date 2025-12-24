@@ -26,14 +26,10 @@ const CourseCard = ({ course, className }: CourseCardProps) => {
         />
         {course.badge && (
           <div className="absolute top-3 left-3">
-            <Badge variant="default">{course.badge}</Badge>
+            <Badge variant="default" className="bg-white/80 backdrop-blur-sm">{course.badge}</Badge>
           </div>
         )}
-        <div className="absolute top-3 right-3">
-          <Badge variant="default" className="bg-dark/80 backdrop-blur-sm">
-            {course.level}
-          </Badge>
-        </div>
+        
       </div>
 
       {/* Content */}

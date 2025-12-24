@@ -8,7 +8,7 @@ const FeaturedCourses = () => {
   const courses = getFeaturedCourses(3);
 
   return (
-    <section className="section-padding bg-dark-50">
+    <section className="pt-10 p-10 bg-dark-50">
       <div className="container-custom">
         {/* Section Header */}
         <div className="flex items-end justify-between mb-12">

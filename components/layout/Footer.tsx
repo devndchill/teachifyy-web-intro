@@ -49,11 +49,11 @@ const Footer = () => {
           {/* Brand & Description */}
           <div className="lg:col-span-2">
             <Link href="/" className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 bg-gradient-to-br from-primary to-yellow-300 rounded-lg flex items-center justify-center font-bold text-dark text-xl">
+              <div className="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center font-bold text-dark text-xl">
                 L
               </div>
               <span className="text-xl font-bold text-white">
-                LMS <span className="text-primary">Academy</span>
+                LMS <span className="text-blue-500">Academy</span>
               </span>
             </Link>
             <p className="text-zinc-400 mb-6 max-w-md">
@@ -61,7 +61,7 @@ const Footer = () => {
             </p>
             
             {/* Newsletter */}
-            <div>
+            {/* <div>
               <h3 className="text-white font-semibold mb-3">Subscribe to our newsletter</h3>
               <form onSubmit={handleNewsletterSubmit} className="flex gap-2">
                 <input
@@ -85,7 +85,7 @@ const Footer = () => {
               {message && (
                 <p className="text-primary text-sm mt-2">{message}</p>
               )}
-            </div>
+            </div> */}
           </div>
 
           {/* Quick Links */}

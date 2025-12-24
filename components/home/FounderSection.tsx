@@ -3,7 +3,7 @@ import { Linkedin, Twitter } from 'lucide-react';
 
 const FounderSection = () => {
   return (
-    <section className="section-padding">
+    <section className="pt-10 pb-10">
       <div className="container-custom">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Image */}

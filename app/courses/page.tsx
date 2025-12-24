@@ -12,7 +12,7 @@ export default function CoursesPage() {
   return (
     <div className="min-h-screen">
       {/* Header */}
-      <section className="section-padding bg-gradient-to-b from-dark to-dark-50">
+      <section className="pt-10 pb-10 bg-gradient-to-b from-dark to-dark-50">
         <div className="container-custom">
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
