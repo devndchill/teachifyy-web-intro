@@ -1,16 +1,16 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import { useState } from 'react';
-import { Menu, X } from 'lucide-react';
-import Button from '@/components/ui/Button';
-import { cn } from '@/lib/utils';
+import Link from "next/link";
+import { useState } from "react";
+import { Menu, X } from "lucide-react";
+import Button from "@/components/ui/Button";
+import { cn } from "@/lib/utils";
 
 const navigation = [
-  { name: 'Home', href: '/' },
-  { name: 'Courses', href: '/courses' },
+  { name: "Home", href: "/" },
+  { name: "Courses", href: "/courses" },
   // { name: 'Blog', href: '/blog' },
-  { name: 'Contact', href: '/contact' },
+  { name: "Contact", href: "/contact" },
 ];
 
 const Header = () => {
@@ -22,11 +22,8 @@ const Header = () => {
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 group">
-            <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center font-bold text-white text-xl group-hover:scale-105 transition-transform shadow-md">
-              L
-            </div>
             <span className="text-xl font-bold text-dark-900 hidden sm:block">
-              LMS <span className="text-primary">Academy</span>
+              Teachify <span className="text-primary"></span>
             </span>
           </Link>
 
@@ -68,8 +65,8 @@ const Header = () => {
         {/* Mobile Menu */}
         <div
           className={cn(
-            'md:hidden overflow-hidden transition-all duration-300 ease-in-out',
-            mobileMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+            "md:hidden overflow-hidden transition-all duration-300 ease-in-out",
+            mobileMenuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
           )}
         >
           <div className="py-4 space-y-4">

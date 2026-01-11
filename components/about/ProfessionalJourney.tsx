@@ -62,11 +62,11 @@ const ProfessionalJourney = () => {
                   style={{ animationDelay: `${index * 0.15}s` }}
                 >
                   {/* Number Badge */}
-                  <div className="flex-shrink-0">
+                  {/* <div className="flex-shrink-0">
                     <div className="w-16 h-16 rounded-full bg-gradient-to-br from-primary to-primary-600 flex items-center justify-center text-2xl font-bold shadow-lg text-white">
                       {stage.number}
                     </div>
-                  </div>
+                  </div> */}
 
                   {/* Content Card */}
                   <div className="flex-1 card card-hover p-6 md:p-8 bg-white shadow-md">

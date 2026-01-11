@@ -43,8 +43,8 @@ const AboutHero = () => {
 
           {/* Main Headline - Line by line reveal effect */}
           <div className="mb-10 space-y-3">
-            <h1 
-              className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight tracking-tight animate-slide-up"
+            <h4
+              className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight tracking-tight animate-slide-up"
               style={{ 
                 animationDelay: "0.2s", 
                 opacity: 0, 
@@ -67,19 +67,19 @@ const AboutHero = () => {
                   />
                 </span>
               </span>
-            </h1>
+            </h4>
           </div>
 
           {/* Emotional Pause - Reality Check */}
           <div 
-            className="mb-8 animate-slide-up"
+            className="mb-6 animate-slide-up"
             style={{ animationDelay: "0.4s", opacity: 0, animationFillMode: "forwards" }}
           >
             <div className="inline-block">
-              <p className="text-xl md:text-2xl lg:text-3xl text-gray-600 leading-relaxed mb-2">
+              <p className="text-xl md:text-2xl lg:text-2xl text-gray-600 leading-relaxed mb-2">
                 Most teachers get a <span className="font-bold text-dark-900">₹10–12k job</span>.
               </p>
-              <p className="text-xl md:text-2xl lg:text-3xl text-gray-600 leading-relaxed">
+              <p className="text-xl md:text-2xl lg:text-2xl text-gray-600 leading-relaxed">
                 Few know how to move beyond it.
               </p>
             </div>
@@ -92,7 +92,7 @@ const AboutHero = () => {
           >
             <div className="relative inline-block">
               <div className="absolute -inset-4 bg-gradient-to-r from-primary/5 via-primary/10 to-dark-100/5 rounded-2xl blur-xl" />
-              <p className="relative text-lg md:text-xl lg:text-2xl text-dark-900 font-medium leading-relaxed px-6 py-4">
+              <p className="relative text-lg md:text-xl lg:text-xl text-dark-900 font-medium leading-relaxed">
                 Teachifyy prepares you for{" "}
                 <span className="font-bold gradient-text">growth</span>,{" "}
                 <span className="font-bold gradient-text">respect</span>, and{" "}
@@ -103,7 +103,7 @@ const AboutHero = () => {
 
           {/* Enhanced CTAs with Psychology */}
           <div 
-            className="flex flex-col sm:flex-row items-start sm:items-center gap-6 mb-12 animate-slide-up"
+            className="flex flex-col sm:flex-row items-start sm:items-center gap-6 mb-2 animate-slide-up"
             style={{ animationDelay: "0.8s", opacity: 0, animationFillMode: "forwards" }}
           >
             {/* Primary CTA with context */}
