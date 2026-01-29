@@ -1,9 +1,9 @@
-import Link from 'next/link';
-import Image from 'next/image';
-import { Clock, Users, Star } from 'lucide-react';
-import Badge from '@/components/ui/Badge';
-import { Course } from '@/data/courses';
-import { cn } from '@/lib/utils';
+import Link from "next/link";
+import Image from "next/image";
+import { Clock, Users, Star } from "lucide-react";
+import Badge from "@/components/ui/Badge";
+import { Course } from "@/data/courses";
+import { cn } from "@/lib/utils";
 
 interface CourseCardProps {
   course: Course;
@@ -14,7 +14,7 @@ const CourseCard = ({ course, className }: CourseCardProps) => {
   return (
     <Link
       href={`/courses/${course.slug}`}
-      className={cn('card card-hover group block', className)}
+      className={cn("card card-hover group block", className)}
     >
       {/* Thumbnail */}
       <div className="relative aspect-video overflow-hidden bg-zinc-800">
@@ -26,10 +26,11 @@ const CourseCard = ({ course, className }: CourseCardProps) => {
         />
         {course.badge && (
           <div className="absolute top-3 left-3">
-            <Badge variant="default" className="bg-white/80 backdrop-blur-sm">{course.badge}</Badge>
+            <Badge variant="default" className="bg-white/80 backdrop-blur-sm">
+              {course.badge}
+            </Badge>
           </div>
         )}
-        
       </div>
 
       {/* Content */}
@@ -44,17 +45,15 @@ const CourseCard = ({ course, className }: CourseCardProps) => {
         </div>
 
         {/* Title */}
-        <h3 className="text-xl font-bold text-white mb-2 group-hover:text-primary transition-colors line-clamp-2">
+        <h3 className="text-xl font-bold text-text-primary mb-2 group-hover:text-primary transition-colors line-clamp-2">
           {course.title}
         </h3>
 
         {/* Description */}
-        <p className="text-zinc-400 text-sm mb-4 line-clamp-2">
-          {course.description}
-        </p>
+        <p className="text-zinc-400 text-sm mb-4">{course.description}</p>
 
         {/* Instructor */}
-        <div className="flex items-center gap-3 mb-4 pb-4 border-b border-zinc-800">
+        {/* <div className="flex items-center gap-3 mb-4 pb-4 border-b border-zinc-800">
           <div className="w-8 h-8 rounded-full bg-zinc-700 overflow-hidden relative">
             <Image
               src={course.instructor.avatar}
@@ -63,8 +62,10 @@ const CourseCard = ({ course, className }: CourseCardProps) => {
               className="object-cover"
             />
           </div>
-          <span className="text-sm text-zinc-300">{course.instructor.name}</span>
-        </div>
+          <span className="text-sm text-zinc-300">
+            {course.instructor.name}
+          </span>
+        </div> */}
 
         {/* Footer */}
         <div className="flex items-center justify-between">
@@ -79,7 +80,7 @@ const CourseCard = ({ course, className }: CourseCardProps) => {
             </div>
           </div>
 
-          <div className="text-right">
+          {/* <div className="text-right">
             {course.originalPrice && (
               <span className="text-sm text-zinc-500 line-through mr-2">
                 ${course.originalPrice}
@@ -88,7 +89,7 @@ const CourseCard = ({ course, className }: CourseCardProps) => {
             <span className="text-xl font-bold text-primary">
               ${course.price}
             </span>
-          </div>
+          </div> */}
         </div>
       </div>
     </Link>

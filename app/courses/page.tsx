@@ -1,11 +1,12 @@
-import { Metadata } from 'next';
-import CourseCard from '@/components/courses/CourseCard';
-import { courses } from '@/data/courses';
-import { constructMetadata } from '@/lib/metadata';
+import { Metadata } from "next";
+import CourseCard from "@/components/courses/CourseCard";
+import { courses } from "@/data/courses";
+import { constructMetadata } from "@/lib/metadata";
 
 export const metadata: Metadata = constructMetadata({
-  title: 'Courses - EduPro Academy',
-  description: 'Browse our comprehensive collection of web development courses. Learn React, Next.js, TypeScript, and more.',
+  title: "Courses - EduPro Academy",
+  description:
+    "Browse our comprehensive collection of web development courses. Learn React, Next.js, TypeScript, and more.",
 });
 
 export default function CoursesPage() {
@@ -18,9 +19,9 @@ export default function CoursesPage() {
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
               Explore Our <span className="text-primary">Courses</span>
             </h1>
-            <p className="text-lg text-zinc-400">
+            {/* <p className="text-lg text-zinc-400">
               Master modern web development with our comprehensive, project-based courses designed for all skill levels.
-            </p>
+            </p> */}
           </div>
         </div>
       </section>
