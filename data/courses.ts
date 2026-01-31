@@ -31,7 +31,7 @@ export const courses: Course[] = [
         slug: 'Diploma in Early Childhood Education',
         title: 'Diploma in Early Childhood Education',
         description: 'Teachifyy is a career-focused diploma program designed for teachers who don’t want to remain stuck in low-paying, stagnant roles. Built around real classroom realities and long-term career growth, the program goes beyond theory to develop confident, employable educators with strong teaching skills, professional presence, and clear growth pathways. By combining practical pedagogy, modern teaching tools, mentorship, and career strategy, Teachifyy prepares teachers not just to get jobs—but to grow in them over time. UK-inspired in standards, India-focused in execution, and built with real schools, Teachifyy helps teachers build respect, stability, and sustainable income in the profession.',
-        thumbnail: '/assets/1.png',
+        thumbnail: '/assets/courseThumb.png',
         category: 'Education',
         duration: '40+ hours',
         level: 'Intermediate',
