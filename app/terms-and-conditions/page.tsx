@@ -27,7 +27,7 @@ const TermsAndConditionsPage = () => {
           <section>
             <h2 className="text-2xl font-semibold text-dark-900 mb-4">1. Overview of Services</h2>
             <p>
-              Teachifyy is an educational platform providing learning programs, training materials, curriculum resources, and related services,
+              Teachifyy is an educational platform and part of Claremont Education LLP providing learning programs, training materials, curriculum resources, and related services,
               primarily focused on early childhood education and educator development.
             </p>
             <p className="mt-2">
@@ -64,7 +64,7 @@ const TermsAndConditionsPage = () => {
             <h2 className="text-2xl font-semibold text-dark-900 mb-4">4. Intellectual Property</h2>
             <p className="mb-4">
               All content available on Teachifyy, including but not limited to videos, text, curriculum frameworks, assessments, graphics, logos,
-              and design elements, is the exclusive property of Teachifyy or its licensors.
+              and design elements, is the exclusive property of Teachifyy a part of Claremont Education LLP  or its licensors.
             </p>
             <p className="font-medium mb-2">You may not:</p>
             <ul className="list-disc pl-6 space-y-2 mb-4">
@@ -153,7 +153,7 @@ const TermsAndConditionsPage = () => {
           <section>
             <h2 className="text-2xl font-semibold text-dark-900 mb-4">13. Amendments</h2>
             <p>
-              Teachifyy may update these Terms from time to time. Continued use of the platform following changes constitutes acceptance of the
+              Teachifyy a part of Claremont Education LLP may update these Terms from time to time. Continued use of the platform following changes constitutes acceptance of the
               revised Terms.
             </p>
           </section>

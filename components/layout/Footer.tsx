@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
-import { Linkedin, Youtube, Twitter,  Send } from 'lucide-react';
+import { Linkedin, Youtube, Twitter, Send } from 'lucide-react';
 const Footer = () => {
   const [email, setEmail] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -11,7 +11,7 @@ const Footer = () => {
   const handleNewsletterSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     // Simulate API call
     setTimeout(() => {
       setMessage('Thanks for subscribing!');
@@ -54,14 +54,15 @@ const Footer = () => {
                   alt="Teachifyy Logo"
                   className="object-cover w-full h-full"
                 />
-              </div>             
-            </Link>            
+              </div>
+            </Link>
             <div className="space-y-2 text-gray-600">
               <p><span className="font-semibold">Address:</span> Jaipur | Delhi | Kolkata</p>
               <p><span className="font-semibold">Email:</span> <a href="mailto:Support@teachifyy.com" className="hover:text-primary transition-colors">Support@teachifyy.com</a></p>
               <p><span className="font-semibold">Contact:</span> +917877447884 | +916291507718</p>
+              <p><span className="font-semibold">Part of CLAREMONT EDUCATION LLP</span></p>
             </div>
-            
+
             {/* Newsletter */}
             {/* <div>
               <h3 className="text-white font-semibold mb-3">Subscribe to our newsletter</h3>
@@ -130,7 +131,7 @@ const Footer = () => {
           <p className="text-gray-500 text-sm">
             © {new Date().getFullYear()} Teachifyy. All rights reserved.
           </p>
-          
+
           {/* Social Links */}
           <div className="flex items-center gap-4">
             {socialLinks.map((social) => {
