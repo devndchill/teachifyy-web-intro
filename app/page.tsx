@@ -1,17 +1,21 @@
-import HeroSection from '@/components/home/HeroSection';
-import FeaturedCourses from '@/components/home/FeaturedCourses';
-import FounderSection from '@/components/home/FounderSection';
-import TestimonialsSection from '@/components/home/TestimonialsSection';
-import AboutPage from './about/page';
+import HeroSection from "@/components/home/HeroSection";
+import StatsSection from "@/components/home/StatsSection";
+import AbcdeSection from "@/components/home/AbcdeSection";
+import BannerSection from "@/components/home/BannerSection";
+import DifferencesSection from "@/components/home/DifferencesSection";
+import TestimonialsSection from "@/components/home/TestimonialsSection";
+import CtaSection from "@/components/home/CtaSection";
 
 export default function Home() {
   return (
     <>
-      {/* <HeroSection />
-      <FeaturedCourses />
-      <FounderSection />
-      <TestimonialsSection /> */}
-      <AboutPage/>
+      <HeroSection />
+      <StatsSection />
+      <AbcdeSection />
+      <BannerSection />
+      <DifferencesSection />
+      <TestimonialsSection />
+      <CtaSection />
     </>
   );
 }

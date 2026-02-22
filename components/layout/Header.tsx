@@ -3,14 +3,13 @@
 import Link from "next/link";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import Button from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 
 const navigation = [
-  { name: "Home", href: "/" },
-  { name: "Courses", href: "/courses" },
-  // { name: 'Blog', href: '/blog' },
+  { name: "Course", href: "/course" },
+  { name: "Blogs", href: "/blogs" },
+  { name: "About Us", href: "/about" },
   { name: "Contact", href: "/contact" },
 ];
 
@@ -18,12 +17,13 @@ const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-white/90 backdrop-blur-lg border-b border-gray-200 transition-colors shadow-sm">
-      <nav className="container-custom">
-        <div className="flex items-center justify-between h-16 md:h-20">
+    <header className="sticky top-0 z-50 bg-white">
+      <nav className="max-w-[1248px] mx-auto px-6 lg:px-12">
+        <div className="flex items-center justify-between h-[80px]">
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <div className="relative w-[120px] h-[40px] sm:w-[140px] sm:h-[48px]">
+              {/* Logo Icon styling based on new image */}
               <Image
                 src="/assets/logo.jpeg"
                 alt="Teachifyy Logo"
@@ -36,12 +36,12 @@ const Header = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-10">
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-gray-700 hover:text-primary transition-colors font-medium"
+                className="text-[#111827] hover:text-[#FF4D67] transition-colors font-sans text-[15px]"
               >
                 {item.name}
               </Link>
@@ -49,16 +49,18 @@ const Header = () => {
           </div>
 
           {/* CTA Button */}
-          {/* <div className="hidden md:block">
-            <Button variant="primary" size="md">
-              Get Started
-            </Button>
-          </div> */}
+          <div className="hidden md:block">
+            <Link href="/start">
+              <button className="bg-[#FF4D67] text-white font-medium text-[15px] pt-[12px] pb-[12px] px-[24px] rounded-[4px] hover:bg-[#ff3b57] transition-all shrink-0">
+                Start Here
+              </button>
+            </Link>
+          </div>
 
           {/* Mobile Menu Button */}
           <button
             type="button"
-            className="md:hidden p-2 text-gray-700 hover:text-primary"
+            className="md:hidden p-2 text-gray-700 hover:text-[#1F4862]"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -82,15 +84,15 @@ const Header = () => {
               <Link
                 key={item.name}
                 href={item.href}
-                className="block py-2 text-gray-700 hover:text-primary transition-colors font-medium"
+                className="block py-2 text-[#111827] hover:text-[#FF4D67] transition-colors font-sans text-[15px]"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {item.name}
               </Link>
             ))}
-            <Button variant="primary" size="md" className="w-full">
-              Get Started
-            </Button>
+            <button className="w-[fit-content] bg-[#FF4667] text-white font-[400] text-[24px] pt-[12px] pb-[12px] px-[12px] rounded-[4px]">
+              Start Here
+            </button>
           </div>
         </div>
       </nav>
