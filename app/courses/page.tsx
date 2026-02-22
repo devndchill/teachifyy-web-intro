@@ -4,7 +4,7 @@ import { courses } from "@/data/courses";
 import { constructMetadata } from "@/lib/metadata";
 
 export const metadata: Metadata = constructMetadata({
-  title: "Courses - EduPro Academy",
+  title: "Courses",
   description:
     "Browse our comprehensive collection of web development courses. Learn React, Next.js, TypeScript, and more.",
 });

@@ -4,7 +4,7 @@ import ContactForm from '@/components/contact/ContactForm';
 import { constructMetadata } from '@/lib/metadata';
 
 export const metadata: Metadata = constructMetadata({
-  title: 'Contact Us - EduPro Academy',
+  title: 'Contact Us',
   description: 'Get in touch with us. We\'re here to help with any questions about our courses and programs.',
 });
 
@@ -60,7 +60,7 @@ export default function ContactPage() {
               <h2 className="text-2xl font-bold mb-6 text-center">
                 Contact <span className="text-primary">Information</span>
               </h2>
-              
+
               <div className="space-y-6 mb-8 w-full max-w-md">
                 {contactInfo.map((info) => {
                   const Icon = info.icon;
@@ -122,7 +122,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-     
+
     </div>
   );
 }

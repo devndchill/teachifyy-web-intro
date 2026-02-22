@@ -152,7 +152,7 @@ export default async function CoursePage({ params }: CoursePageProps) {
 
                 <div className="mt-6 pt-6 border-t border-zinc-800">
                   <SocialShare
-                    url={`https://edupro-academy.com/courses/${course.slug}`}
+                    url={`#`}
                     title={course.title}
                     description={course.description}
                     className="justify-center"

@@ -3,7 +3,7 @@ import { courses } from '@/data/courses';
 import { articles } from '@/data/articles';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-    const baseUrl = 'https://edupro-academy.com';
+    const baseUrl = '#';
 
     // Static pages
     const staticPages = [

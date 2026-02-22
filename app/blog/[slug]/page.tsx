@@ -103,7 +103,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
               {/* Social Share */}
               <SocialShare
-                url={`https://edupro-academy.com/blog/${article.slug}`}
+                url={`#`}
                 title={article.title}
                 description={article.excerpt}
                 className="hidden md:flex"
@@ -124,7 +124,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             {/* Mobile Social Share */}
             <div className="md:hidden mb-8">
               <SocialShare
-                url={`https://edupro-academy.com/blog/${article.slug}`}
+                url={`#`}
                 title={article.title}
                 description={article.excerpt}
               />

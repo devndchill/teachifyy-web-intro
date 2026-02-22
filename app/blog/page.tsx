@@ -4,7 +4,7 @@ import { articles } from '@/data/articles';
 import { constructMetadata } from '@/lib/metadata';
 
 export const metadata: Metadata = constructMetadata({
-  title: 'Blog - EduPro Academy',
+  title: 'Blog',
   description: 'Read our latest articles on web development, programming best practices, and industry insights.',
 });
 

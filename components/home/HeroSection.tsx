@@ -74,7 +74,7 @@ const HeroSection = () => {
 
               {/* CTA Buttons */}
               <div className="flex flex-wrap items-center gap-[14px]">
-                <Link href="/webinar">
+                <Link href="/courses">
                   <button className="flex items-center justify-center bg-[#FF4D67] text-white font-medium text-[15px] pt-[14px] pb-[14px] pl-[28px] pr-[24px] rounded-full hover:bg-[#ff3b57] transition-colors">
                     Register for Webinar
                     <ArrowRight className="w-[18px] h-[18px] ml-2" />

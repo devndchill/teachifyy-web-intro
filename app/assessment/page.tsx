@@ -7,10 +7,10 @@ export const metadata = {
 
 export default function AssessmentPage() {
     return (
-        <div className="min-h-screen bg-gray-50/50 py-24 px-4 sm:px-6 lg:px-8">
+        <div className="min-h-screen bg-gray-50/50 py-5 px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
                 <div className="text-center mb-12 animate-fade-in">
-                    <h1 className="text-4xl font-bold tracking-tight text-dark-900 sm:text-5xl">
+                    <h1 className="text-4xl font-bold tracking-tight text-dark-900 sm:text-4xl">
                         Career Assessment
                     </h1>
                     <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
