@@ -13,14 +13,14 @@ const AbcdeSection = () => {
           <h2 className="text-[#111827] text-[40px] md:text-[54px] font-bold font-sans tracking-tight mb-8 leading-[1.15]">
             The{" "}
             <span className="bg-gradient-to-r from-[#FF4667] to-[#2A4C7A] text-transparent bg-clip-text">
-              ABCDE's
+              ABCDE s
             </span>
             <br />
             of Teacher <br />
             Development
           </h2>
           <p className="text-[#475569] text-[14px] md:text-[15px] font-sans pr-4 leading-relaxed">
-            Most programs get this wrong. Here's how Teachifyy gets it right.
+            Most programs get this wrong. Here is how Teachifyy gets it right.
           </p>
         </div>
 

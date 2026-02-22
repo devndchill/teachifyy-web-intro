@@ -46,7 +46,7 @@ const TestimonialsSection = () => {
 
         {/* Subtext */}
         <p className="text-[#334155] text-[18px] max-w-4xl text-center mb-20 font-sans tracking-tight">
-          Real stories from real educators who've transformed their teaching
+          Real stories from real educators who have transformed their teaching
           practice and careers with Teachifyy.
         </p>
 

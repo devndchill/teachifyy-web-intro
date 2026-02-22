@@ -53,7 +53,7 @@ export default function AssessmentTest() {
     const [message, setMessage] = useState('');
     const [userLeadId, setUserLeadId] = useState<string | null>(null);
     const [assessmentResult, setAssessmentResult] = useState<AssessmentResult | null>(null);
-    const name = localStorage.getItem('fullName');
+    const [name, setName] = useState<string | null>(null);
 
     useEffect(() => {
         const fetchQuestions = async () => {
@@ -93,6 +93,11 @@ export default function AssessmentTest() {
             setUserLeadId(id);
         } else {
             console.warn('No assessmentId found in localStorage');
+        }
+
+        const storedName = localStorage.getItem('fullName');
+        if (storedName) {
+            setName(storedName);
         }
 
         fetchQuestions();

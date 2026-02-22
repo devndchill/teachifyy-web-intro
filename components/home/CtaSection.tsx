@@ -18,8 +18,8 @@ const CtaSection = () => {
 
         {/* Subheading */}
         <p className="text-white/90 text-[15px] md:text-[16px] max-w-[600px] leading-relaxed mb-12 font-[300] tracking-wide">
-          Join thousands of educators who've turned their teaching potential
-          into real-world impact. Let's build your capability together.
+          Join thousands of educators who have turned their teaching potential
+          into real-world impact. Let is build your capability together.
         </p>
 
         {/* CTA Button */}

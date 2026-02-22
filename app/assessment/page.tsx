@@ -14,7 +14,7 @@ export default function AssessmentPage() {
                         Career Assessment
                     </h1>
                     <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
-                        Tell us about your background and aspirations. We'll help chart the perfect path to elevate your tech career.
+                        Tell us about your background and aspirations. We will help chart the perfect path to elevate your tech career.
                     </p>
                 </div>
 

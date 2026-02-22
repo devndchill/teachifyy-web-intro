@@ -24,6 +24,7 @@ export function constructMetadata({
     [key: string]: any;
 }): Metadata {
     return {
+        metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000"),
         title,
         description,
         openGraph: {
