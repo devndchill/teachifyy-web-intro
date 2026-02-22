@@ -4,6 +4,16 @@ import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Button from '@/components/ui/Button';
 import { submitAssessmentTest, getAssessmentQuestions } from '@/lib/api';
+import {
+    Chart as ChartJS,
+    RadialLinearScale,
+    ArcElement,
+    Tooltip,
+    Legend,
+} from 'chart.js';
+import { PolarArea } from 'react-chartjs-2';
+
+ChartJS.register(RadialLinearScale, ArcElement, Tooltip, Legend);
 
 interface QuestionOption {
     A: string;
@@ -159,6 +169,46 @@ export default function AssessmentTest() {
     }
 
     if (status === 'success' && assessmentResult) {
+        const labels = Object.values(assessmentResult.categoryFeedback).map((f: any) => f.label);
+        const data = Object.keys(assessmentResult.categoryFeedback).map((key: string) => assessmentResult.categoryScores[key] || 0);
+
+        const chartData = {
+            labels,
+            datasets: [
+                {
+                    label: 'Score',
+                    data,
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.5)',
+                        'rgba(54, 162, 235, 0.5)',
+                        'rgba(255, 206, 86, 0.5)',
+                        'rgba(75, 192, 192, 0.5)',
+                        'rgba(153, 102, 255, 0.5)',
+                        'rgba(255, 159, 64, 0.5)',
+                    ],
+                    borderWidth: 1,
+                },
+            ],
+        };
+
+        const chartOptions = {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                r: {
+                    min: 0,
+                    ticks: {
+                        stepSize: 1,
+                    }
+                }
+            },
+            plugins: {
+                legend: {
+                    position: 'bottom' as const,
+                }
+            }
+        };
+
         return (
             <div className="bg-white rounded-xl shadow-lg p-6 md:p-8 max-w-4xl mx-auto mt-8 border border-gray-100">
                 <div className="text-center mb-8">
@@ -169,6 +219,10 @@ export default function AssessmentTest() {
                     </div>
                     <h2 className="text-2xl font-bold text-gray-900 mb-2">Assessment Results for {name} </h2>
                     <p className="text-gray-600 mb-6">You scored <span className="font-bold text-blue-600 text-xl">{assessmentResult.totalScore}</span> out of {assessmentResult.totalQuestions}</p>
+                </div>
+
+                <div className="mb-10 flex justify-center h-[400px]">
+                    <PolarArea data={chartData} options={chartOptions} />
                 </div>
 
                 <div className="grid gap-6 md:grid-cols-2">
