@@ -2,9 +2,9 @@ import type { Metadata } from 'next';
 
 export const siteConfig = {
     name: 'Teachifyy',
-    description: 'Master modern web development with expert-led courses. Learn React, Next.js, TypeScript, and more.',
+    description: 'Career launchpad for teachers with assessment, coaching, certification, and job support.',
     url: '',
-    ogImage: '/og-image.jpg',
+    ogImage: '/assets/logo.jpeg',
     links: {
         twitter: '',
         linkedin: '',
