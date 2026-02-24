@@ -63,7 +63,7 @@ const HeroSection = () => {
       </div>
 
       <div className="max-w-[1440px] mx-auto w-full relative z-10">
-        <div className="max-w-[1248px] mx-auto lg:px-12 py-10 md:py-10 lg:py-12 flex items-center">
+        <div className="max-w-[1248px] mx-auto px-5 lg:px-12 py-10 md:py-10 lg:py-12 flex items-center">
           <div className="grid lg:grid-cols-[1fr_0.9fr] gap-12 lg:gap-16 items-center w-full">
             {/* Left Content */}
             <div className="flex flex-col items-start text-left">
