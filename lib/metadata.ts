@@ -4,7 +4,7 @@ export const siteConfig = {
     name: 'Teachifyy',
     description: 'Career launchpad for teachers with assessment, coaching, certification, and job support.',
     url: '',
-    ogImage: '/assets/logo.jpeg',
+    ogImage: '/assets/newLogo.png',
     links: {
         twitter: '',
         linkedin: '',

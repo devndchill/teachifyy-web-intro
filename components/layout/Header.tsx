@@ -26,7 +26,7 @@ const Header = () => {
             <div className="relative w-[120px] h-[40px] sm:w-[140px] sm:h-[48px]">
               {/* Logo Icon styling based on new image */}
               <Image
-                src="/assets/logo.jpeg"
+                src="/assets/newLogo.png"
                 alt="Teachifyy Logo"
                 fill
                 priority

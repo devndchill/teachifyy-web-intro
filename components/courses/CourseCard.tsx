@@ -110,7 +110,7 @@ const CourseCard = ({ course, className }: CourseCardProps) => {
             <div className="absolute bottom-3 right-3 z-10">
               <Button
                 onClick={handleButtonClick}
-                className="bg-red-500/80 backdrop-blur-sm text-White"
+                className="bg-[#ff4d67] backdrop-blur-sm text-White"
               >
                 BUY NOW
               </Button>
