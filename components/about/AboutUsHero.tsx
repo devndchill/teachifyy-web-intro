@@ -29,7 +29,7 @@ export default function AboutUsHero() {
 
                         {/* Subtext */}
                         <p className="text-lg text-slate-600 mb-8 max-w-md">
-                            For every teacher seeking progress, this is home. We provide the tools, the community, and the growth you've been waiting for.
+                            For every teacher seeking progress, this is home. We provide the tools, the community, and the growth you have been waiting for.
                         </p>
 
                         {/* CTA Button */}
@@ -46,7 +46,7 @@ export default function AboutUsHero() {
                     <div className="relative w-full aspect-[4/3] max-w-lg mx-auto md:ml-auto rounded-3xl overflow-hidden shadow-2xl rotate-6">
                         {/* Using a placeholder for now since we don't have the exact image asset */}
                         <div className="absolute inset-0 bg-slate-200">
-                            <img
+                            <Image
                                 src="/assets/aboutHero.jpg"
                                 alt="Teachers in a classroom setting"
                                 className="w-full h-full object-cover"

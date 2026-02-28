@@ -44,7 +44,7 @@ export default function TeamSection() {
                     {/* Main featured profile card (Shivam) spanning 2 rows / 1 col on desktop */}
                     <div className="md:col-span-1 md:row-span-2 relative h-[500px] md:h-[738px] rounded-3xl overflow-hidden bg-slate-200 aspect-[3/4] md:aspect-auto group shadow-sm transition-shadow hover:shadow-xl">
                         {teamMembers[0].image ? (
-                            <img
+                            <Image
                                 src={teamMembers[0].image}
                                 alt={teamMembers[0].name}
                                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
@@ -64,7 +64,7 @@ export default function TeamSection() {
                         {teamMembers.slice(1).map((member, idx) => (
                             <div key={idx} className="relative rounded-3xl overflow-hidden bg-[#E2E8F0] aspect-square group shadow-sm transition-shadow hover:shadow-xl">
                                 {member.image ? (
-                                    <img
+                                    <Image
                                         src={member.image}
                                         alt={member.name}
                                         className="w-full h-full object-cover grayscale transition-transform duration-500 group-hover:scale-105 hover:grayscale-0"

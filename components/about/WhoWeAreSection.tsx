@@ -12,7 +12,7 @@ export default function WhoWeAreSection() {
                             <h2 className="text-3xl font-bold tracking-tight mb-4 text-white">Who We Are</h2>
                         </div>
                         <p className="text-blue-100/90 leading-relaxed text-lg">
-                            Teachifyy is more than just a platform, it's a movement dedicated to the professional and personal upliftment of educators worldwide. We believe that when teachers thrive, humanity progresses.
+                            Teachifyy is more than just a platform, it is a movement dedicated to the professional and personal upliftment of educators worldwide. We believe that when teachers thrive, humanity progresses.
                         </p>
 
                         <div className="mt-auto">
