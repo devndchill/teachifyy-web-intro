@@ -77,6 +77,10 @@ export const courses: Course[] = [
     },
 ];
 
+export function getCourseById(id: string): Course | undefined {
+    return courses.find((course) => course.id === id);
+}
+
 export function getCourseBySlug(slug: string): Course | undefined {
     return courses.find((course) => course.slug === slug);
 }

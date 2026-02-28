@@ -26,7 +26,7 @@ const CourseCard = ({ course, className }: CourseCardProps) => {
   return (
     <>
       <Link
-        href={`#`}
+        href={`/courses/${course.id}`}
         className={cn("card card-hover group block relative", className)}
       >
         {/* Thumbnail */}

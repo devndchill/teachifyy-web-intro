@@ -7,16 +7,16 @@ import Button from '@/components/ui/Button';
 import Badge from '@/components/ui/Badge';
 import SocialShare from '@/components/ui/SocialShare';
 import CourseCard from '@/components/courses/CourseCard';
-import { getCourseBySlug, courses } from '@/data/courses';
+import { getCourseById, courses } from '@/data/courses';
 import { constructMetadata } from '@/lib/metadata';
 
 interface CoursePageProps {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ id: string }>;
 }
 
 export async function generateMetadata({ params }: CoursePageProps): Promise<Metadata> {
-  const { slug } = await params;
-  const course = getCourseBySlug(slug);
+  const { id } = await params;
+  const course = getCourseById(id);
 
   if (!course) {
     return constructMetadata({});
@@ -30,13 +30,13 @@ export async function generateMetadata({ params }: CoursePageProps): Promise<Met
 
 export async function generateStaticParams() {
   return courses.map((course) => ({
-    slug: course.slug,
+    id: course.id,
   }));
 }
 
 export default async function CoursePage({ params }: CoursePageProps) {
-  const { slug } = await params;
-  const course = getCourseBySlug(slug);
+  const { id } = await params;
+  const course = getCourseById(id);
 
   if (!course) {
     notFound();
@@ -49,7 +49,7 @@ export default async function CoursePage({ params }: CoursePageProps) {
   return (
     <div className="min-h-screen">
       {/* Breadcrumb */}
-      <div className="bg-dark-50 border-b border-zinc-800">
+      <div className=" border-b border-zinc-800">
         <div className="container-custom py-4">
           <Link
             href="/courses"
@@ -62,12 +62,12 @@ export default async function CoursePage({ params }: CoursePageProps) {
       </div>
 
       {/* Course Hero */}
-      <section className="section-padding bg-gradient-to-b from-dark-50 to-dark">
+      <section className="section-padding">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
             {/* Left Column - Course Info */}
             <div className="lg:col-span-2">
-              <div className="flex items-center gap-3 mb-4">
+              <div className="flex items-center gap-3 mb-4 ">
                 <Badge variant="default">{course.category}</Badge>
                 <Badge variant="default">{course.level}</Badge>
                 {course.badge && <Badge variant="default">{course.badge}</Badge>}
