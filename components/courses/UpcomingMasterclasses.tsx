@@ -6,7 +6,7 @@ import Badge from "../ui/Badge";
 
 const UpcomingMasterclasses = () => {
     return (
-        <section className="py-16 md:py-24 bg-dark-900 border-t border-b border-dark-800">
+        <section className="py-16 md:py-24 bg-[#0E172B] border-t border-b border-dark-800">
             <div className="container-custom">
                 <div className="flex flex-col lg:flex-row gap-12 lg:gap-24 items-center">
 

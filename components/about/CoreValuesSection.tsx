@@ -27,6 +27,14 @@ export default function CoreValuesSection() {
     return (
         <section className="py-20 md:py-28 bg-[#111827]"> {/* Deep dark navy/black color */}
             <div className="container mx-auto px-4 max-w-6xl">
+                <div className="mb-12 md:mb-16">
+                    <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-3 text-white">
+                        Our Core Values
+                    </h2>
+                    <p className="text-white/70 text-lg max-w-xl">
+                        The principles that guide every decision we make.
+                    </p>
+                </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
                     {values.map((value, index) => {
                         const Icon = value.icon;
