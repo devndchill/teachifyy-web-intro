@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 const articles = [
   {
-    image: '/assets/secondBlog.jpg',
+    image: '/assets/secondblog.jpg',
     badge: 'TIPS',
     readTime: '4 min read',
     title: 'Thinking of Opening a Preschool? Build These Core Skills First',

@@ -28,7 +28,7 @@ export default function CoursesList() {
     if (!courses.length) {
         return (
             <div className="text-center py-20 text-gray-500">
-                <p>No courses found.</p>
+                <p>Courses Coming Soon.</p>
             </div>
         );
     }

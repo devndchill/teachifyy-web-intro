@@ -57,7 +57,7 @@ export default function AppHero() {
                 className="flex items-center"
               >
                 <Image
-                  src="/assets/iosDownload.png"
+                  src="/assets/IosDownload.png"
                   alt="Download on iOS"
                   width={160}
                   height={160}
