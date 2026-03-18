@@ -1,4 +1,4 @@
-import { useQuery } from "@tanstack/react-query";
+import { useQuery, useMutation } from "@tanstack/react-query";
 import { CourseService } from "@/services/CourseService";
 
 export const GET_PUBLIC_COURSES_KEY = ["courses", "public"];
@@ -25,5 +25,13 @@ export const useGetPublicCourseBySlugQuery = (slug: string) => {
         queryKey: GET_PUBLIC_COURSE_BY_SLUG_KEY(slug),
         queryFn: () => getPublicCourseBySlugQuery(slug),
         enabled: !!slug,
+    });
+};
+
+export const useDeleteAccountMutation = () => {
+    return useMutation({
+        mutationFn: async (payload: { email: string; phone: string }) => {
+            return new CourseService().deleteAccount(payload);
+        },
     });
 };

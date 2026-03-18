@@ -13,7 +13,7 @@ const HeroSection = () => {
     }, 5000);
 
     return () => clearInterval(interval);
-  }, []);
+  });
   const heroSlides = [
     {
       title: (

@@ -35,7 +35,7 @@ export default function AppHero() {
             {/* Store Badges */}
             <div className="flex items-center justify-center gap-4 mb-6">
               <Link
-                href="https://play.google.com/store"
+                href="https://play.google.com/store/apps/details?id=com.teachifyy.app&pcampaignid=web_share"
                 target="_blank"
                 rel="noreferrer"
                 className="flex items-center"

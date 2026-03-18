@@ -16,6 +16,7 @@ interface CourseCardProps {
 
 const CourseCard = ({ course, className }: CourseCardProps) => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(false);
 
   const handleButtonClick = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -30,14 +31,14 @@ const CourseCard = ({ course, className }: CourseCardProps) => {
         className={cn("card card-hover group block relative", className)}
       >
         {/* Thumbnail */}
-        <div className="relative aspect-video overflow-hidden bg-zinc-800 h-[280px] w-[400px]">
+        <div className="relative aspect-video overflow-hidden bg-zinc-800 w-full">
           <Image
             src={course.image}
             alt={course.title}
             // width={300}
             // height={100}
             fill
-            className=" group-hover:scale-105 transition-transform duration-300"
+            className="object-cover group-hover:scale-105 transition-transform duration-300"
           />
           {course.badge && (
             <div className="absolute top-3 left-3 z-10">
@@ -66,7 +67,27 @@ const CourseCard = ({ course, className }: CourseCardProps) => {
           </h3>
 
           {/* Description */}
-          <p className="text-zinc-400 text-sm mb-4">{course.description}</p>
+          <div className="text-zinc-400 text-sm mb-4">
+            {course.description && course.description.length > 120 ? (
+              <>
+                {isExpanded
+                  ? course.description
+                  : `${course.description.substring(0, 120)}...`}
+                <button
+                  onClick={(e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    setIsExpanded(!isExpanded);
+                  }}
+                  className="text-primary hover:text-primary/80 font-medium ml-1 inline-block"
+                >
+                  {isExpanded ? "Show less" : "Read more"}
+                </button>
+              </>
+            ) : (
+              course.description
+            )}
+          </div>
 
           {/* Instructor */}
           {/* <div className="flex items-center gap-3 mb-4 pb-4 border-b border-zinc-800">

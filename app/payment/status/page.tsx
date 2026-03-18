@@ -1,11 +1,55 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState, Suspense } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { CheckCircle2, ArrowRight, BookOpen } from "lucide-react";
+import { useSearchParams } from "next/navigation";
+import { CheckCircle2, ArrowRight, BookOpen, XCircle, Loader2 } from "lucide-react";
+import { useGetPaymentStatusQuery } from "@/app/api/payment";
 
-export default function PaymentSuccessPage() {
+function PaymentStatusContent() {
+  const searchParams = useSearchParams();
+  const orderId = searchParams.get("order_id");
+
+  const { data, isLoading, isError } = useGetPaymentStatusQuery(orderId);
+
+  // We consider it successful if the API successfully returns and the data status is PAID
+  // (adjust this based on your actual backend response structure)
+  const isSuccess = data?.success === true && data?.data?.status === "PAID";
+  const isFailed = isError || (data && (!data.success || data.data?.status !== "PAID"));
+
+  const courseData = data?.data?.course;
+  const courseName = courseData?.title || "Course Name";
+  const courseLevel = courseData?.level || "All Levels";
+  const courseDuration = courseData?.totalWeeks ? `${courseData.totalWeeks} Weeks` : "Self-paced";
+
+  if (isLoading || !orderId) {
+    return (
+      <div className="min-h-screen flex flex-col items-center justify-center font-sans bg-gray-50 text-center px-4">
+        <Loader2 className="w-12 h-12 text-[#ff4f6a] animate-spin mb-4" />
+        <h2 className="text-2xl font-bold text-gray-900 mb-2">Verifying your payment...</h2>
+        <p className="text-gray-500">Please wait while we confirm your enrollment.</p>
+      </div>
+    );
+  }
+
+  if (isFailed) {
+    return (
+      <div className="min-h-screen flex flex-col items-center justify-center font-sans bg-gray-50 text-center px-4">
+        <XCircle className="w-16 h-16 text-red-500 mb-6" />
+        <h2 className="text-3xl font-bold text-gray-900 mb-4">Payment Failed or Cancelled</h2>
+        <p className="text-gray-500 mb-8 max-w-md">
+          We couldn&apos;t process your payment. You haven&apos;t been charged. If money was deducted, it will be refunded automatically.
+        </p>
+        <Link href="/">
+          <button className="bg-[#ff4f6a] hover:bg-[#e0435c] text-white font-medium px-8 py-3 rounded-full transition-colors">
+            Return to Home
+          </button>
+        </Link>
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen flex flex-col font-sans">
       {/* Top Section - White Background */}
@@ -106,10 +150,10 @@ export default function PaymentSuccessPage() {
             {/* Card Body - List */}
             <div className="space-y-0">
               {[
-                { label: "Course", value: "Diploma in Early Childhood Education" },
+                { label: "Course", value: courseName },
                 { label: "Format", value: "Video Learning" },
-                { label: "Duration", value: "240 Hours" },
-                { label: "Levels", value: "3 Learning Levels" },
+                { label: "Duration", value: courseDuration },
+                { label: "Level", value: courseLevel },
                 { label: "Certificate", value: "Yes, after completion" },
               ].map((item, index) => (
                 <div key={index} className="flex items-center justify-between py-5 border-b border-gray-100 last:border-0">
@@ -132,5 +176,17 @@ export default function PaymentSuccessPage() {
         </div>
       </section>
     </div>
+  );
+}
+
+export default function PaymentStatusPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#ff4f6a]"></div>
+      </div>
+    }>
+      <PaymentStatusContent />
+    </Suspense>
   );
 }

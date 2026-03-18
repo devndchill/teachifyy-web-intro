@@ -37,7 +37,7 @@ export default function CoursesList() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
             {courses.map((course: any) => (
                 <CourseCard
-                    key={course.id || course._id}
+                    key={course.courseId}
                     course={course}
                     className="shadow-sm border border-gray-100"
                 />

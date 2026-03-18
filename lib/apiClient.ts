@@ -38,8 +38,8 @@ const setupInterceptors = (instance: AxiosInstance) => {
                     localStorage.removeItem("token");
                     document.cookie =
                         "token=; path=/; expires=Thu, 01 Jan 1970 00:00:01 GMT;";
-                    if (window.location.pathname !== "/login") {
-                        window.location.href = "/login";
+                    if (window.location.pathname !== "/") {
+                        window.location.href = "/";
                     }
                 }
             }

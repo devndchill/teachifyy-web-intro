@@ -89,13 +89,17 @@ export default function CoursePage({ params }: { params: Promise<{ id: string }>
             </div>
 
             {/* Right – Image */}
-            <div className="flex-shrink-0 w-full max-w-[260px] sm:max-w-[300px] md:max-w-[340px] lg:max-w-[380px]">
-              <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl shadow-black/40">
+            <div className="flex-shrink-0 w-full max-w-[320px] sm:max-w-[400px] md:max-w-[500px] lg:max-w-[560px]">
+              <div className="relative w-full aspect-[16/9] rounded-2xl overflow-hidden shadow-2xl shadow-black/40">
                 {data.course?.image && (
                   <Image
                     src={data.course.image}
                     alt={data.course.title || "Course thumbnail"}
                     fill
+                    sizes="(max-width: 640px) 320px,
+               (max-width: 768px) 400px,
+               (max-width: 1024px) 500px,
+               560px"
                     className="object-cover"
                     priority
                   />
@@ -181,7 +185,7 @@ export default function CoursePage({ params }: { params: Promise<{ id: string }>
                   </ul>
 
                   {/* Enroll CTA */}
-                  <Link href="/contact" className="block mb-3">
+                  <Link href={`/courses/${slug}/enroll`} className="block mb-3">
                     <button className="w-full bg-primary hover:bg-primary-600 text-white font-semibold text-[15px] py-3.5 rounded-lg transition-colors shadow-md shadow-primary/20">
                       Enroll Now
                     </button>
@@ -237,17 +241,9 @@ export default function CoursePage({ params }: { params: Promise<{ id: string }>
                     {/* Accordion Body */}
                     {isOpen && (
                       <div className="px-5 pb-5 pt-0">
-                        <ul className="space-y-2.5 border-t border-gray-100 pt-4">
-                          {level.topics?.map((topic: string, i: number) => (
-                            <li
-                              key={i}
-                              className="flex items-start gap-3 text-gray-600 text-sm"
-                            >
-                              <div className="w-1.5 h-1.5 rounded-full bg-primary shrink-0 mt-1.5" />
-                              {topic}
-                            </li>
-                          ))}
-                        </ul>
+                        <div className="text-gray-600 text-[15px] border-t border-gray-100 pt-4 leading-relaxed">
+                          {level.description || "No description available for this level."}
+                        </div>
                       </div>
                     )}
                   </div>

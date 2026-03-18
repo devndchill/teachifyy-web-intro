@@ -25,7 +25,7 @@ export default function AppBottomCta() {
               Download on App Store
             </Link>
             <Link
-              href="https://play.google.com/store"
+              href="https://play.google.com/store/apps/details?id=com.teachifyy.app&pcampaignid=web_share"
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center gap-2 border border-white text-white font-medium text-[15px] py-3 px-7 rounded-full hover:bg-white hover:text-[#2b5585] transition-all duration-200"
