@@ -1,8 +1,8 @@
 import Image from 'next/image';
-import { mockBlogData } from '@/app/blog/[id]/mockData';
 import { Check } from 'lucide-react';
+import { BlogDetailContentSection } from '@/types/blog';
 
-export default function BlogContentSection({ content }: { content: typeof mockBlogData.data.content }) {
+export default function BlogContentSection({ content }: { content: BlogDetailContentSection[] }) {
     return (
         <section className="pb-12">
             <div className="container-custom max-w-4xl mx-auto space-y-16">
@@ -18,14 +18,19 @@ export default function BlogContentSection({ content }: { content: typeof mockBl
                             </p>
                         ))}
 
-                        {section.image && (
-                            <div className="relative aspect-video rounded-2xl overflow-hidden mt-8 mb-8 border border-zinc-100 dark:border-zinc-800 shadow-sm">
-                                <Image
-                                    src={section.image}
-                                    alt={section.title}
-                                    fill
-                                    className="object-cover"
-                                />
+                        {section.images && section.images.length > 0 && (
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8 mb-8">
+                                {section.images.map((img, iIdx) => (
+                                    <div key={iIdx} className="relative aspect-video rounded-2xl overflow-hidden border border-zinc-100 dark:border-zinc-800 shadow-sm">
+                                        <Image
+                                            src={img}
+                                            alt={`${section.title} image ${iIdx + 1}`}
+                                            fill
+                                            className="object-cover"
+                                            unoptimized
+                                        />
+                                    </div>
+                                ))}
                             </div>
                         )}
 
@@ -51,3 +56,4 @@ export default function BlogContentSection({ content }: { content: typeof mockBl
         </section>
     );
 }
+

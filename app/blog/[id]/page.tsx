@@ -1,32 +1,43 @@
-import { mockBlogData } from './mockData';
-import BlogHero from '@/components/blog/id/BlogHero';
-import KeyTakeaways from '@/components/blog/id/KeyTakeaways';
-import BlogContentSection from '@/components/blog/id/BlogContentSection';
-import BlogQuote from '@/components/blog/id/BlogQuote';
-import BlogAdditionalSection from '@/components/blog/id/BlogAdditionalSection';
-import BlogCTA from '@/components/blog/id/BlogCTA';
-import BlogContinueReading from '@/components/blog/id/BlogContinueReading';
-import BlogNewsletter from '@/components/blog/id/BlogNewsletter';
-import BlogListSection from '@/components/blog/BlogListSection';
+"use client";
+import BlogHero from "@/components/blog/id/BlogHero";
+import KeyTakeaways from "@/components/blog/id/KeyTakeaways";
+import BlogContentSection from "@/components/blog/id/BlogContentSection";
+import BlogAdditionalSection from "@/components/blog/id/BlogAdditionalSection";
+import BlogCTA from "@/components/blog/id/BlogCTA";
+import BlogNewsletter from "@/components/blog/id/BlogNewsletter";
+import BlogListSection from "@/components/blog/BlogListSection";
+import { useGetBlogByIdQuery } from "@/app/api/blog";
+import { useParams } from "next/navigation";
 
 export default function BlogByIdPage() {
-    const { data } = mockBlogData;
+  const { id } = useParams();
+  const { data, isLoading } = useGetBlogByIdQuery(id as string);
 
+  const blog = data?.data;
+
+  if (isLoading) {
     return (
-        <main className="min-h-screen bg-white dark:bg-black">
-            {/* 
-        The top navigation from the layout handles the "Teachifyy | Home Contact..." 
-        so we just start with the Hero section. 
-      */}
-            <BlogHero hero={data.hero} />
-            <KeyTakeaways data={data.keyTakeaways} />
-            <BlogContentSection content={data.content} />
-            {/* <BlogQuote data={data.quoteSection} /> */}
-            <BlogAdditionalSection data={data.additionalSection} />
-            <BlogCTA />
-            {/* <BlogContinueReading /> */}
-            <BlogListSection />
-            <BlogNewsletter />
-        </main>
+      <main className="min-h-screen bg-white dark:bg-black flex items-center justify-center">
+        <div className="text-zinc-500 text-lg animate-pulse">
+          Loading blog...
+        </div>
+      </main>
     );
+  }
+
+  if (!blog) return null;
+
+  return (
+    <main className="min-h-screen bg-white dark:bg-black">
+      <BlogHero hero={{ ...blog.hero, category: blog?.category }} />
+      <KeyTakeaways data={blog.keyTakeaways} />
+      <BlogContentSection content={blog.content} />
+      {blog.additionalSection && (
+        <BlogAdditionalSection data={blog.additionalSection} />
+      )}
+      <BlogCTA />
+      <BlogListSection blogs={[]} />
+      <BlogNewsletter />
+    </main>
+  );
 }

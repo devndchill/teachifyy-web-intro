@@ -1,6 +1,6 @@
-import { mockBlogData } from '@/app/blog/[id]/mockData';
+import { BlogDetailAdditionalSection } from '@/types/blog';
 
-export default function BlogAdditionalSection({ data }: { data: typeof mockBlogData.data.additionalSection }) {
+export default function BlogAdditionalSection({ data }: { data: BlogDetailAdditionalSection }) {
     return (
         <section className="pb-16 pt-8">
             <div className="container-custom max-w-4xl mx-auto">

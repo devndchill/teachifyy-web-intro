@@ -1,7 +1,7 @@
 import { CheckCircle2 } from 'lucide-react';
-import { mockBlogData } from '@/app/blog/[id]/mockData';
+import { BlogDetailKeyTakeaways } from '@/types/blog';
 
-export default function KeyTakeaways({ data }: { data: typeof mockBlogData.data.keyTakeaways }) {
+export default function KeyTakeaways({ data }: { data: BlogDetailKeyTakeaways }) {
     return (
         <section className="pb-12">
             <div className="container-custom max-w-4xl mx-auto">
