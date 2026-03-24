@@ -1,7 +1,12 @@
 import Image from "next/image";
 import { BlogDetailHero } from "@/types/blog";
 
-export default function BlogHero({ hero }: { hero: BlogDetailHero }) {
+interface Props {
+  hero: BlogDetailHero;
+  date?: string;
+}
+
+export default function BlogHero({ hero, date }: Props) {
   return (
     <section className="pt-8 pb-12">
       <div className="container-custom">
@@ -10,7 +15,7 @@ export default function BlogHero({ hero }: { hero: BlogDetailHero }) {
             <span className="px-3 py-1 bg-[#DDE6F2] dark:bg-zinc-800 text-black dark:text-zinc-300 rounded-full text-xs tracking-wider uppercase border border-zinc-200 dark:border-zinc-700 shadow-sm">
               {hero.category}{" "}
             </span>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-zinc-900 dark:text-white leading-tight">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-zinc-900 dark:text-white">
               {hero.title}
             </h1>
             <p className="text-zinc-600 dark:text-zinc-400 text-base md:text-lg">
@@ -19,6 +24,18 @@ export default function BlogHero({ hero }: { hero: BlogDetailHero }) {
             <div className="flex items-center gap-2 text-sm text-zinc-500 dark:text-zinc-400 mt-2">
               <span className="font-medium">By {hero.author.name}</span>
               <span>•</span>
+              {date && (
+                <>
+                  <span>
+                    {new Date(date).toLocaleDateString("en-US", {
+                      month: "short",
+                      day: "numeric",
+                      year: "numeric",
+                    })}
+                  </span>
+                  <span>•</span>
+                </>
+              )}
               <span>{hero.author.readTime} min read</span>
             </div>
           </div>
@@ -27,10 +44,9 @@ export default function BlogHero({ hero }: { hero: BlogDetailHero }) {
               <Image
                 src={hero.image}
                 alt={hero.title}
+                width={1200}
+                height={600}
                 fill
-                className="object-cover"
-                priority
-                unoptimized
               />
             </div>
           </div>

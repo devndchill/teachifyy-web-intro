@@ -5,11 +5,11 @@ export default function BlogHero() {
     <section className="pt-20 pb-12">
       <div className="container-custom">
         <div className="flex flex-col items-center text-center max-w-3xl mx-auto">
-          <span className="bg-[#EBF3FB] text-dark-900 text-[10px] sm:text-xs font-semibold px-4 py-1.5 rounded-full mb-6 uppercase tracking-[0.1em]">
+          <span className="bg-[#DDE6F2] text-[10px] sm:text-xs px-4 py-1.5 rounded-full mb-6 uppercase">
             TEACHER RESOURCES
           </span>
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 leading-[1.15] tracking-tight">
-            Insights for Teachers<br />Who Want to <span className="text-primary">Grow</span>
+          <h1 className="text-4xl md:text-5xl font-light mb-6 text-gray-900 leading-[1.15]">
+            Insights for Teachers<br />Who Want to <span className="text-[#FF4667] font-bold">Grow</span>
           </h1>
           <p className="text-base md:text-[17px] text-gray-600 max-w-2xl text-balance leading-relaxed">
             Articles and insights on teaching practice, early childhood education, career growth,

@@ -36,11 +36,11 @@ export default function BlogContentSection({ content }: { content: BlogDetailCon
 
                         {section.highlightPoints && section.highlightPoints.length > 0 && (
                             <div className="mt-8">
-                                <div className="border-l-4 border-primary pl-6 py-2 space-y-4">
+                                <div className="border-l-4 border-[#FF4667] pl-6 py-2 space-y-4">
                                     {section.highlightPoints.map((point, hIdx) => (
                                         <div key={hIdx} className="flex items-start gap-3">
                                             <div className="mt-1 w-5 h-5 rounded-full bg-blue-50 flex items-center justify-center flex-shrink-0">
-                                                <Check className="w-3 h-3 text-primary" />
+                                                <Check className="w-3 h-3 text-[#FF4667]" />
                                             </div>
                                             <span className="text-zinc-800 dark:text-zinc-200 font-medium">
                                                 {point}

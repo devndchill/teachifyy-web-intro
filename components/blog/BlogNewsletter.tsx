@@ -1,31 +1,36 @@
 export default function BlogNewsletter() {
   return (
-    <section className="py-16 md:py-24 bg-white">
-      <div className="container-custom">
-        <div className="bg-white rounded-[2rem] border border-gray-100 shadow-[0_4px_40px_rgb(0,0,0,0.06)] p-8 md:p-14 max-w-[1000px] mx-auto flex flex-col md:flex-row items-center gap-10 md:gap-16 text-center md:text-left">
-          <div className="flex-1 space-y-4">
-            <h2 className="text-[1.75rem] md:text-3xl font-bold text-gray-900 tracking-tight">
+    <section className="py-10 md:py-16 bg-white flex justify-center w-full">
+      <div className="container-custom max-w-[1100px] p-4 w-full">
+        <div className="bg-white rounded-[3rem] border border-gray-100 shadow-[0_8px_40px_rgba(0,0,0,0.04)] p-8 sm:p-12 md:p-16 flex flex-col md:flex-row items-center justify-between gap-10 md:gap-16 text-center md:text-left">
+
+          {/* Left Side */}
+          <div className="flex-1 max-w-[500px]">
+            <h3 className="font-bold text-black tracking-tight mb-4 text-[20px] sm:text-[24px]">
               Stay Updated with Teacher Insights
-            </h2>
-            <p className="text-gray-500 text-base leading-relaxed max-w-md mx-auto md:mx-0 pr-4">
-              Receive new articles, teaching strategies, and educator resources directly in your inbox. No spam, just pure pedagogical value.
+            </h3>
+            <p className="text-[12px] sm:text-[16px]">
+              Receive new articles, teaching strategies, and educator resources directly in your inbox. No spam, just pure pedagogical value
             </p>
           </div>
-          <div className="w-full md:w-auto md:min-w-[420px]">
-            <div className="bg-white border border-gray-200 rounded-full p-1.5 flex flex-col sm:flex-row shadow-[0_2px_10px_rgb(0,0,0,0.02)] transition-shadow focus-within:ring-2 focus-within:ring-primary/20 focus-within:border-primary">
+
+          {/* Right Side */}
+          <div className="w-full sm:w-auto flex flex-col">
+            <div className="relative w-full max-w-[420px] bg-white rounded-full border border-gray-100 shadow-[0_4px_20px_rgba(0,0,0,0.05)] h-14 sm:h-[60px] flex items-center p-1.5 focus-within:ring-2 focus-within:ring-[#2E5478]/20 focus-within:border-[#2E5478]/40 transition-all">
               <input
                 type="email"
-                placeholder="Your email id"
-                className="flex-1 w-full pl-6 pr-4 py-3 bg-transparent text-gray-900 placeholder:text-gray-400 focus:outline-none text-[15px]"
+                placeholder="Email Address"
+                className="flex-1 w-full bg-transparent border-none outline-none pl-5 sm:pl-6 pr-4 text-[14px] sm:text-[15px] text-gray-800 placeholder:text-[#B0B0B0]"
               />
-              <button className="bg-dark-900 hover:bg-dark-800 text-white px-8 py-3.5 rounded-full font-semibold transition-colors text-[15px] whitespace-nowrap">
+              <button className="h-full bg-[#2E5478] hover:bg-[#254663] text-white px-7 sm:px-9 rounded-full text-[14px] sm:text-[15px] font-medium transition-colors shadow-sm whitespace-nowrap">
                 Subscribe
               </button>
             </div>
-            <p className="text-[11px] text-gray-400 mt-4 ml-4 text-left">
-              By subscribing, you agree to our Terms of Use and Privacy Policy.
+            <p className="text-[10px] sm:text-[11px] text-[#A0A0A0] mt-3 sm:ml-6 text-center sm:text-left tracking-wide">
+              By subscribing, you agree to our Privacy Policy and Terms of Service.
             </p>
           </div>
+
         </div>
       </div>
     </section>
