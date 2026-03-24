@@ -111,7 +111,7 @@ export default function CoursePage({ params }: { params: Promise<{ id: string }>
               <div className="relative w-full h-[450px] max-w-full rounded-[50px] overflow-hidden shadow-2xl shadow-black/40">
                 {data.course?.image && (
                   <Image
-                    src={data.course.image}
+                    src={data.course.secondImage}
                     alt={data.course.title || "Course thumbnail"}
                     fill
                     sizes="(max-width: 640px) 320px,
@@ -299,12 +299,11 @@ export default function CoursePage({ params }: { params: Promise<{ id: string }>
 
             {/* Content */}
             <div className="flex flex-col sm:flex-row items-start gap-5 max-w-2xl">
-
               {/* Mentor Image */}
               <div className="w-20 h-20 md:w-24 md:h-24 rounded-full bg-gray-100 flex items-center justify-center shrink-0 border-2 border-gray-100 relative overflow-hidden text-2xl font-bold text-gray-400">
-                {data.mentor?.imageUrl || data.mentor?.image ? (
+                {data.mentor?.imageUrl ? (
                   <Image
-                    src={data.mentor.imageUrl || data.mentor.image}
+                    src={data.mentor.imageUrl}
                     alt={data.mentor?.name || "Mentor"}
                     fill
                     className="object-cover"

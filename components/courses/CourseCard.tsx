@@ -40,12 +40,21 @@ const CourseCard = ({
         {/* Thumbnail */}
         {/* 800*280 for populer thubmnail */}
         <div className="relative w-full aspect-[5/3] overflow-hidden">
+          {/* Mobile Image */}
           <Image
             src={course.image || "/assets/new test.png"}
             alt={course.title}
             fill
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            className="object-cover group-hover:scale-105 transition-transform duration-500"
+            sizes="(max-width: 768px) 100vw, 0px"
+            className="md:hidden object-cover group-hover:scale-105 transition-transform duration-500"
+          />
+          {/* Desktop/Tablet Image */}
+          <Image
+            src={course.isMain && course.mainImage ? course.mainImage : (course.image || "/assets/new test.png")}
+            alt={course.title}
+            fill
+            sizes="(max-width: 768px) 0px, (max-width: 1200px) 50vw, 33vw"
+            className="hidden md:block object-cover group-hover:scale-105 transition-transform duration-500"
           />
 
           {/* POPULAR badge */}
@@ -83,16 +92,15 @@ const CourseCard = ({
           <p className="text-gray-500 text-sm mb-6 line-clamp-2 min-h-[40px]">
             {course.description}
           </p>
-
           {/* Footer */}
           <div className="flex items-center justify-between pt-4 mt-auto border-t border-gray-50/50">
             {/* Instructor */}
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-full bg-gray-100 overflow-hidden relative shrink-0">
-                {course.instructor?.avatar && (
+                {course.mentorImage && (
                   <Image
-                    src={course.instructor.avatar}
-                    alt={course.instructor.name || "Instructor"}
+                    src={course.mentorImage}
+                    alt={"Instructor"}
                     fill
                     className="object-cover"
                   />

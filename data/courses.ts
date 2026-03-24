@@ -4,8 +4,12 @@ export interface Course {
     title: string;
     description: string;
     thumbnail: string;
+    isMain?: boolean;
+    mainImage?: string;
+    secondImage?: string;
     category: string;
     duration: string;
+    mentorImage: string;
     level: 'Beginner' | 'Intermediate' | 'Advanced';
     instructor: {
         name: string;
