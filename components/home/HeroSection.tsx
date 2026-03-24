@@ -149,7 +149,7 @@ const HeroSection = () => {
             </div>
 
             {/* RIGHT IMAGE */}
-            <div className="relative w-full max-w-[450px] mx-auto lg:mx-0">
+            <div className="relative w-full max-w-[450px] mx-auto ">
               <div className="relative w-full h-[450px] max-w-full rounded-[50px] overflow-hidden">
                 <Image
                   src="/assets/teacher-classroom.png"
