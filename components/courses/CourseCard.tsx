@@ -38,9 +38,10 @@ const CourseCard = ({
         )}
       >
         {/* Thumbnail */}
+        {/* 800*280 for populer thubmnail */}
         <div className="relative w-full aspect-[5/3] overflow-hidden">
           <Image
-            src={"/assets/new test.png"}
+            src={course.image || "/assets/new test.png"}
             alt={course.title}
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
