@@ -66,7 +66,6 @@ const HeroSection = () => {
       <div className="max-w-[1440px] mx-auto relative z-10">
         <div className="max-w-[1248px] mx-auto px-4 sm:px-6 lg:px-12 py-8 md:py-10 lg:py-12">
           <div className="grid lg:grid-cols-[1fr_0.9fr] gap-10 lg:gap-16 items-center">
-
             {/* LEFT */}
             <div className="flex flex-col items-start text-left">
               {/* Badge */}
@@ -75,8 +74,12 @@ const HeroSection = () => {
               </div>
 
               {/* Heading */}
-              <div key={currentSlide} className="animate-fade-in lg:h-[250px] h-[180px]" >
-                <h1 className="text-[#111827] 
+              <div
+                key={currentSlide}
+                className="animate-fade-in lg:h-[250px] h-[180px]"
+              >
+                <h1
+                  className="text-[#111827] 
                   text-[28px] 
                   sm:text-[34px] 
                   md:text-[40px] 
@@ -84,17 +87,20 @@ const HeroSection = () => {
                   leading-tight 
                   mb-4 
                   font-Inter
-                  font-light">
+                  font-light"
+                >
                   {heroSlides[currentSlide].title}
                 </h1>
 
-                <p className="text-[#475569] 
+                <p
+                  className="text-[#475569] 
                   text-[13px] 
                   sm:text-[14px] 
                   md:text-[16px] 
                   mb-6 
                   max-w-full 
-                  lg:max-w-[540px]">
+                  lg:max-w-[540px]"
+                >
                   {heroSlides[currentSlide].subtitle}
                 </p>
               </div>
@@ -108,7 +114,10 @@ const HeroSection = () => {
                 ].map((item, i) => (
                   <div key={i} className="flex items-center gap-2">
                     <div className="w-4 h-4 rounded-full bg-[#34A853] flex items-center justify-center">
-                      <Check className="w-2.5 h-2.5 text-white" strokeWidth={4} />
+                      <Check
+                        className="w-2.5 h-2.5 text-white"
+                        strokeWidth={4}
+                      />
                     </div>
                     <span className="text-[#334155] text-[12px] sm:text-[13px] font-medium">
                       {item}
@@ -135,16 +144,18 @@ const HeroSection = () => {
 
               {/* Logos */}
               <div className="flex flex-wrap items-center gap-4 mt-8">
-                {["herosmall1.png", "herosmall2.png", "herosmall3.png"].map((img, i) => (
-                  <Image
-                    key={i}
-                    src={`/assets/${img}`}
-                    alt="feature"
-                    width={120}
-                    height={40}
-                    className="h-[30px] sm:h-[40px] md:h-[50px] w-auto object-contain"
-                  />
-                ))}
+                {["herosmall1.png", "herosmall2.png", "herosmall3.png"].map(
+                  (img, i) => (
+                    <Image
+                      key={i}
+                      src={`/assets/${img}`}
+                      alt="feature"
+                      width={120}
+                      height={40}
+                      className="h-[30px] sm:h-[40px] md:h-[50px] w-auto object-contain"
+                    />
+                  ),
+                )}
               </div>
             </div>
 
@@ -161,7 +172,8 @@ const HeroSection = () => {
               </div>
 
               {/* Floating Card */}
-              <div className="absolute 
+              <div
+                className="absolute 
                 bottom-[-20px] 
                 sm:bottom-4 
                 left-1/2 
@@ -172,7 +184,8 @@ const HeroSection = () => {
                 px-4 py-3 
                 shadow-lg 
                 flex items-center gap-3 
-                min-w-[200px]">
+                min-w-[200px]"
+              >
                 <ChartNoAxesCombined className="w-6 h-6 text-[#34A853]" />
                 <div>
                   <p className="font-bold text-[13px]">Success</p>
@@ -182,7 +195,6 @@ const HeroSection = () => {
                 </div>
               </div>
             </div>
-
           </div>
         </div>
       </div>
