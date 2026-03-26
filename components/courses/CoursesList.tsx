@@ -33,7 +33,9 @@ export default function CoursesList() {
         );
     }
 
-    const [featuredCourse, secondCourse, ...restCourses] = courses;
+    const featuredCourse = courses.find((c: any) => c.isMain === true) || courses[0];
+    const nonFeaturedCourses = courses.filter((c: any) => c !== featuredCourse);
+    const [secondCourse, ...restCourses] = nonFeaturedCourses;
 
     return (
         <div className="flex flex-col gap-6 lg:gap-8">
