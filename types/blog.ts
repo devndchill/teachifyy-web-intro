@@ -6,6 +6,8 @@ export interface Blog {
   description: string;
   thumbnail: string;
   createdAt: string;
+  isSpotlight?: boolean;
+  spotlightThumbnail: string;
 }
 
 export interface BlogsResponse {
@@ -22,7 +24,7 @@ export interface BlogDetailHero {
     name: string;
     readTime: string;
   };
-  category: string;
+  category?: string;
 }
 
 export interface BlogDetailKeyTakeaways {
@@ -33,7 +35,7 @@ export interface BlogDetailKeyTakeaways {
 export interface BlogDetailContentSection {
   title: string;
   paragraphs: string[];
-  highlightPoints: string[];
+  highlightPoints: string[] | null;
   images: string[];
 }
 
@@ -47,6 +49,9 @@ export interface BlogDetail {
   slug: string;
   category: string;
   hero: BlogDetailHero;
+  isSpotlight?: boolean;
+  spotlightThumbnail?: string;
+  secondThumbnail?: string;
   keyTakeaways: BlogDetailKeyTakeaways;
   content: BlogDetailContentSection[];
   quoteSection: null | { quote: string; author: string };

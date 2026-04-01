@@ -8,7 +8,7 @@ interface Props {
 }
 
 export default function FeaturedArticleSection({ blog }: Props) {
-  if (!blog) return null;
+  if (!blog?.isSpotlight) return null;
 
   return (
     <section className="pb-16 mt-6">
@@ -24,7 +24,7 @@ export default function FeaturedArticleSection({ blog }: Props) {
 
           <div className="w-full md:w-[50%] relative aspect-[4/3] rounded-3xl overflow-hidden self-stretch">
             <Image
-              src={blog.thumbnail}
+              src={blog.spotlightThumbnail}
               alt={blog.title}
               fill
               className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"

@@ -3,10 +3,13 @@ import { BlogDetailHero } from "@/types/blog";
 
 interface Props {
   hero: BlogDetailHero;
+  secondThumbnail?: string;
   date?: string;
 }
 
-export default function BlogHero({ hero, date }: Props) {
+export default function BlogHero({ hero, secondThumbnail, date }: Props) {
+  console.log("hero", hero);
+
   return (
     <section className="pt-8 pb-12">
       <div className="container-custom">
@@ -42,7 +45,7 @@ export default function BlogHero({ hero, date }: Props) {
           <div className="order-1 lg:order-2">
             <div className="relative w-full max-w-[450px] h-[450px] mx-auto rounded-[50px] overflow-hidden shadow-lg border border-zinc-100 dark:border-zinc-800">
               <Image
-                src={hero.image}
+                src={secondThumbnail || hero.image}
                 alt={hero.title}
                 fill
                 className="object-cover"

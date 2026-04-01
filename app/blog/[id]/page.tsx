@@ -29,7 +29,7 @@ export default function BlogByIdPage() {
 
   return (
     <main className="min-h-screen bg-white dark:bg-black">
-      <BlogHero hero={{ ...blog.hero, category: blog?.category }} date={blog.createdAt} />
+      <BlogHero hero={{ ...blog.hero, category: blog?.category }} secondThumbnail={blog.secondThumbnail} date={blog.createdAt} />
       <KeyTakeaways data={blog.keyTakeaways} />
       <BlogContentSection content={blog.content} />
       {blog.additionalSection && (

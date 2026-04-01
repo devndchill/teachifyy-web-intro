@@ -11,7 +11,7 @@ export default function BlogPage() {
   const { data, isLoading } = useGetBlogsQuery();
 
   const blogs: Blog[] = data?.data ?? [];
-  const featuredBlog: Blog | null = blogs.length > 0 ? blogs[blogs.length - 1] : null;
+  const featuredBlog: Blog | null = blogs.find(blog => blog.isSpotlight) || null;
 
   if (isLoading) {
     return (
