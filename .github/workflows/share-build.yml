@@ -1,4 +1,4 @@
-name: Share Build to Another Account
+name: Build and Push to Another Repo
 
 on:
   push:
@@ -6,19 +6,17 @@ on:
       - main
 
 jobs:
-  build-and-share:
+  build-and-push:
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout source repository
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: '20'
           cache: 'npm'
 
       - name: Install dependencies
@@ -29,63 +27,40 @@ jobs:
         env:
           NODE_ENV: production
 
-      - name: Configure git
+      - name: Push build to target repository
         run: |
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git config --global user.name "github-actions[bot]"
+          TARGET_REPO="devndchill-commits/teachifyy-web-build"
 
-      - name: Push to teachifyy-web-intro
-        run: |
-          git clone https://${{ secrets.PAT_TOKEN }}@github.com/devndchill-commits/teachifyy-web-intro.git repo1
-          
-          cd repo1
-          rm -rf .next out public dist || true
-          
-          cp -r ../.next .next 2>/dev/null || true
-          cp -r ../out out 2>/dev/null || true
-          cp ../package.json package.json
-          cp ../package-lock.json package-lock.json 2>/dev/null || true
-          
+          git clone https://x-access-token:${{ secrets.PAT_TOKEN }}@github.com/${TARGET_REPO}.git target-repo
+
+          # Clear old build artifacts in target
+          cd target-repo
+          git rm -rf . --quiet 2>/dev/null || true
+          cd ..
+
+          # Copy full source + build output to target
+          rsync -av \
+            --exclude='.git' \
+            --exclude='node_modules' \
+            --exclude='.env*' \
+            ./ target-repo/
+
+          cd target-repo
+
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
+
           git add -A
-          
-          if ! git diff --cached --quiet; then
-            git commit -m "chore: update build from source repository
 
-Source: ${{ github.repository }}@${{ github.sha }}
-Author: ${{ github.actor }}
+          if git diff --cached --quiet; then
+            echo "No changes to commit. Skipping push."
+          else
+            git commit -m "build: deploy from ${{ github.repository }}@${{ github.sha }}
+
+Triggered by: ${{ github.actor }}
 Timestamp: $(date -u +'%Y-%m-%dT%H:%M:%SZ')"
             git push origin main
-            echo "✓ Pushed to teachifyy-web-intro"
-          else
-            echo "No changes to commit in teachifyy-web-intro"
+            echo "Successfully pushed build to ${TARGET_REPO}"
           fi
         env:
-          GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
-
-      - name: Push to teachifyy-web-build
-        run: |
-          git clone https://${{ secrets.PAT_TOKEN }}@github.com/devndchill-commits/teachifyy-web-build.git repo2
-          
-          cd repo2
-          rm -rf .next out public dist || true
-          
-          cp -r ../.next .next 2>/dev/null || true
-          cp -r ../out out 2>/dev/null || true
-          cp ../package.json package.json
-          cp ../package-lock.json package-lock.json 2>/dev/null || true
-          
-          git add -A
-          
-          if ! git diff --cached --quiet; then
-            git commit -m "chore: update build from source repository
-
-Source: ${{ github.repository }}@${{ github.sha }}
-Author: ${{ github.actor }}
-Timestamp: $(date -u +'%Y-%m-%dT%H:%M:%SZ')"
-            git push origin main
-            echo "✓ Pushed to teachifyy-web-build"
-          else
-            echo "No changes to commit in teachifyy-web-build"
-          fi
-        env:
-          GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
+          PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
