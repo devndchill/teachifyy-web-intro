@@ -173,7 +173,7 @@ export default function CoursePage({ params }: { params: Promise<{ id: string }>
               <div className="lg:sticky lg:top-24">
                 <div className="bg-white rounded-[40px] shadow-[0_8px_40px_rgb(0,0,0,0.06)] p-8 border border-gray-100 flex flex-col">
                   {/* Price Header */}
-                  <div className="mb-8">
+                  {/* <div className="mb-8">
                     <div className="flex flex-wrap items-center gap-3 mb-2">
                       <span className="text-[44px] md:text-[52px] font-bold text-[#111827] leading-none tracking-tight">
                         ₹{formattedPrice}
@@ -185,7 +185,7 @@ export default function CoursePage({ params }: { params: Promise<{ id: string }>
                     <p className="text-[#34A853] font-bold text-[13px] md:text-[14px]">
                       Limited time early bird pricing
                     </p>
-                  </div>
+                  </div> */}
 
                   {/* What's included */}
                   <div className="mb-10 flex-1">
@@ -213,11 +213,11 @@ export default function CoursePage({ params }: { params: Promise<{ id: string }>
 
                   {/* CTA Buttons */}
                   <div className="space-y-4 w-full">
-                    <Link href={`/courses/${slug}/enroll`} className="block w-full">
+                    {/* <Link href={`/courses/${slug}/enroll`} className="block w-full">
                       <button className="w-full bg-[#FF4667] hover:bg-[#E53858] text-white font-normal text-[17px] py-[14px] transition-colors border border-[#FF4667]">
                         Enroll Now
                       </button>
-                    </Link>
+                    </Link> */}
                     <Link href="/contact" className="block w-full">
                       <button className="w-full border border-[#FF4667] text-[#111827] bg-white hover:bg-gray-50 font-normal text-[17px] py-[14px] transition-colors">
                         Talk to an Advisor
