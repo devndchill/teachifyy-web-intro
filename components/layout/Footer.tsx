@@ -94,6 +94,7 @@ const Footer = () => {
               { label: "About Us", path: "/about" },
               { label: "Career", path: "/career" },
               { label: "Contact", path: "/contact" },
+              { label: "Community Guidelines", path: "/community-guidelines" },
               { label: "Download App", path: "/download" },
               { label: "Terms & Conditions", path: "/terms-and-conditions" },
             ].map((link) => (
