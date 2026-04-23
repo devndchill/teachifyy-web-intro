@@ -8,7 +8,7 @@ import UpcomingMasterclasses from "@/components/courses/UpcomingMasterclasses";
 export const metadata: Metadata = constructMetadata({
   title: "Courses",
   description:
-    "Browse our comprehensive collection of web development courses. Learn React, Next.js, TypeScript, and more.",
+    "Define your teaching career with online courses and certification from Teachifyy. Learn Pedagogy, Classroom Management, IB/International Teaching interview, Professional Communication & Interview Mastery, TEFL/TESOL.",
 });
 
 export default function CoursesPage() {

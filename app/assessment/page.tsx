@@ -2,7 +2,7 @@ import AssessmentForm from '@/components/assessment/AssessmentForm';
 
 export const metadata = {
     title: 'Career Assessment | Teachifyy',
-    description: 'Take your career assessment test with Teachifyy and find the right path for your technical journey.',
+    description: 'Take your career assessment test with Teachifyy and find the right path for your teaching career.',
 };
 
 export default function AssessmentPage() {
