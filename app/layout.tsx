@@ -8,7 +8,7 @@ import { constructMetadata } from "@/lib/metadata";
 import QueryProvider from "@/components/providers/QueryProvider";
 
 const GA_ID = process.env.NEXT_PUBLIC_GOOGLE_TAG_ID;
-const FB_PIXEL_ID = "965225332895689";
+const FB_PIXEL_ID = "859965700463879";
 
 const inter = Inter({
   subsets: ["latin"],
