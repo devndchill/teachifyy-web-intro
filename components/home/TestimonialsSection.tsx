@@ -2,31 +2,52 @@ import React from "react";
 import Image from "next/image";
 import { Star } from "lucide-react";
 
-// Updated the array to perfectly reflect the content in the user's design snapshot
+// Updated the array with the new testimonials including 'Before', 'After' and 'Earning'
 const testimonials = [
   {
     id: 1,
-    name: "Syed Rahman",
-    role: "Primary Educator , Vietnam",
-    content:
-      '“No other program showed me the path to go international. Teachifyy did — step by step. Never thought being a teacher in Vietnam was this easy”',
-    initials: "SR",
+    name: "Priya Sharma",
+    role: "English Teacher, Pune",
+    earning: "Now earning ₹42K/month",
+    content: (
+      <>
+        <span className="font-bold not-italic block mb-0.5">Before:</span>
+        <span className="block mb-2">"I had been teaching English for 6 years but never had a certificate to show for it. Every international school I applied to asked for a TEFL and I had nothing. I kept losing opportunities to younger teachers with less experience but more credentials."</span>
+        <span className="font-bold not-italic block mb-0.5">After:</span>
+        <span className="block">"Three months after completing Teachify's TEFL/TESOL programme, I got shortlisted at two international curriculum schools. I now teach Cambridge English at a school in Noida — at a salary I couldn't have asked for before."</span>
+      </>
+    ),
+    initials: "PS",
   },
   {
     id: 2,
-    name: "Holly Hilton",
-    role: "Primary Educator , UK",
-    content:
-      '“There’s a certain confidence you carry after going through Teachifyy. It reflects in the way you speak, teach, and lead a classroom.”',
-    initials: "HH",
+    name: "Meenakshi Rawat",
+    role: "Preschool Teacher, Delhi",
+    earning: "Now earning ₹74K/month",
+    content: (
+      <>
+        <span className="font-bold not-italic block mb-0.5">Before:</span>
+        <span className="block mb-2">"My spoken English was fine but I had no structure to how I taught it. Parents would ask me about my qualifications and I would go quiet. I felt like a fraud even though I genuinely loved teaching."</span>
+        <span className="font-bold not-italic block mb-0.5">After:</span>
+        <span className="block">"Now I have a certified methodology behind everything I do in class. Parents see the certificate and ask fewer questions — but more importantly, I finally feel like I deserve to be in the room."</span>
+      </>
+    ),
+    initials: "MR",
   },
   {
     id: 3,
-    name: "Sohini Mondal",
-    role: "Mentor",
-    content:
-      '“Teachifyy focuses on what most training misses — real classroom readiness. It’s not about completing a course, it’s about becoming a teacher students remember.”',
-    initials: "SM",
+    name: "Ankita Verma",
+    role: "Senior Teacher & Department Coordinator, Kolkata",
+    earning: "Now earning ₹50K/month",
+    content: (
+      <>
+        <span className="font-bold not-italic block mb-0.5">Before:</span>
+        <span className="block mb-2">"I was being considered for a coordinator role but kept getting passed over. My principal told me I needed to 'present myself better.' I didn't fully understand what that meant — I thought I was communicating fine."</span>
+        <span className="font-bold not-italic block mb-0.5">After:</span>
+        <span className="block">"After Teachify's Professional Communication course, I led my first parent-teacher townhall without notes and received written appreciation from the school director. I got the coordinator title two months later."</span>
+      </>
+    ),
+    initials: "AV",
   },
 ];
 
@@ -69,9 +90,9 @@ const TestimonialsSection = () => {
 
               {/* Front Content Container */}
               <div className="relative z-10 ml-[55px] mt-[55px] pr-4 lg:pr-6 flex flex-col items-start min-h-[220px]">
-                <p className="text-[#334155] text-[12px] leading-[1.7] italic font-medium tracking-tight pr-2">
+                <div className="text-[#334155] text-[11px] leading-[1.6] italic font-medium tracking-tight pr-2">
                   {test.content}
-                </p>
+                </div>
 
                 <div className="mt-[20px] w-full flex items-center justify-between">
                   <div className="flex items-center gap-[10px]">
@@ -85,16 +106,10 @@ const TestimonialsSection = () => {
                       <p className="text-[#64748B] text-[9px] leading-tight font-medium">
                         {test.role}
                       </p>
+                      <p className="text-[#10B981] text-[10px] font-bold leading-tight mt-[2px]">
+                        {test.earning}
+                      </p>
                     </div>
-                  </div>
-
-                  <div className="flex items-center gap-[2px] shrink-0">
-                    {[1, 2, 3, 4, 5].map((star) => (
-                      <Star
-                        key={star}
-                        className="w-[10px] h-[10px] fill-[#FACC15] text-[#FACC15]"
-                      />
-                    ))}
                   </div>
                 </div>
               </div>
