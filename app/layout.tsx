@@ -9,6 +9,7 @@ import QueryProvider from "@/components/providers/QueryProvider";
 
 const GA_ID = process.env.NEXT_PUBLIC_GOOGLE_TAG_ID;
 const FB_PIXEL_ID = "859965700463879";
+const CLARITY_ID = "woz51oggzc";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -23,7 +24,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  console.log(GA_ID);
   return (
     <html lang="en" className={inter.variable}>
       <body className="min-h-screen flex flex-col">
@@ -66,6 +66,17 @@ export default function RootLayout({
           />
         </noscript>
         {/* End Facebook Pixel Code */}
+
+        {/* Microsoft Clarity */}
+        <Script id="microsoft-clarity" strategy="afterInteractive">
+          {`
+            (function(c,l,a,r,i,t,y){
+                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+            })(window, document, "clarity", "script", "${CLARITY_ID}");
+          `}
+        </Script>
         <QueryProvider>
           <Header />
           <main className="flex-1">{children}</main>
