@@ -119,8 +119,7 @@ export default function LeadDownloadModal({ resource, onClose }: Props) {
             Download{" "}
             <span className="text-[#FF4667]">{resource.name}</span>
           </h2>
-          <p className="text-[13px] text-gray-500 mt-1">
-            Fill in your details to get instant access to the PDF.
+          <p className="text-[13px] text-gray-500 mt-1">Fill in your details to get your registration done
           </p>
         </div>
 
@@ -260,8 +259,7 @@ export default function LeadDownloadModal({ resource, onClose }: Props) {
             type="submit"
             isLoading={isPending}
             className="w-full bg-[#FF4667] hover:bg-[#E03A56] text-white rounded-[12px] py-3.5 text-[15px] font-semibold border-none shadow-[0_4px_14px_rgba(255,70,103,0.3)] hover:shadow-[0_6px_20px_rgba(255,70,103,0.4)] transition-all duration-300 disabled:opacity-70 disabled:cursor-not-allowed mt-2"
-          >
-            Download PDF
+          >Register
           </Button>
         </form>
       </div>

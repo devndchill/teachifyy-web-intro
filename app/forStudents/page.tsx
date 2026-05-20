@@ -29,7 +29,7 @@ export default function ResourcesPage() {
 
       {/* New and Trending horizontal carousel */}
       <div className="pt-6 sm:pt-10">
-        <ResourceCarousel title="Class V to X programs" resources={trending} />
+        <ResourceCarousel title="Explore our programs" resources={trending} />
       </div>
 
       {/* Quick Browse with category filter + grouped sections */}
