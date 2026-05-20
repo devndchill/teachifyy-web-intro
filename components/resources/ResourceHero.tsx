@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Users, Plane, ClipboardList } from "lucide-react";
 import LeadDownloadModal from "./LeadDownloadModal";
 
 export default function ResourceHero() {
@@ -30,31 +30,51 @@ export default function ResourceHero() {
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
-          <div className="flex flex-col items-start max-w-xl">
-            {/* Badge */}
-            <div className="inline-flex items-center rounded-full border border-blue-100 bg-[#DDE6F2] px-4 py-1.5 shadow-sm mb-6">
-              <span className="text-[9px] sm:text-[10px]">For IB/ISCE/CBSE Students</span>
-            </div>
-
+          {/* Left Content */}
+          <div className="flex flex-col items-start w-full max-w-2xl">
             {/* Heading */}
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-light text-slate-900 mb-6 leading-[1.1] tracking-tighter">
-              <span className="text-[#ff4d67] font-bold">THE INTERNATIONAL OLYMPIAD</span>
-              <br />
-              Registration is open
+            <h1 className="flex flex-col font-semibold tracking-tight mb-2 ">
+              <span className="text-3xl sm:text-4xl md:text-5xl lg:text-[54px] text-slate-900 font-light uppercase">
+                THE INTERNATIONAL
+              </span>
+              <span className="text-5xl sm:text-6xl md:text-7xl lg:text-[84px] text-[#ff4d67] font-bold uppercase mt-1 leading-[0.9] tracking-tighter">
+                OLYMPIAD
+              </span>
             </h1>
 
-            {/* Subtext */}
-            <p className="text-md md:text-lg text-slate-600 mb-8 max-w-md">
-              standard 5-10th students across India Your child can now get a chance to experience an educational trip to London
-            </p>
+            {/* Features List */}
+            <div className="flex flex-col gap-6 sm:gap-8 mb-8 md:mb-10 w-full">
+              {/* Feature 1 */}
+              <div className="flex items-center gap-4 sm:gap-5">
+                <div className="flex-1">
+                  <p className="text-base sm:text-lg md:text-xl text-slate-800 font-light leading-snug">
+                    Registration is open for{" "}
+                    <span className="text-[#ff4d67] font-bold">standard 5–10th students</span>{" "}
+                    across India.
+                  </p>
+                </div>
+              </div>
+
+              {/* Feature 2 */}
+              <div className="flex items-center gap-4 sm:gap-5">
+                <div className="flex-1">
+                  <p className="text-base sm:text-lg md:text-xl text-slate-800 font-light leading-snug">
+                    Your child can now get a{" "}
+                    <span className="text-[#ff4d67] font-bold">chance to experience</span>{" "}
+                    an educational trip to London.
+                  </p>
+                </div>
+              </div>
+            </div>
 
             {/* CTA Button */}
             <button
               onClick={() => setShowModal(true)}
-              className="inline-flex items-center justify-center rounded-full bg-[#ff4d67] px-8 py-3.5 text-base font-medium text-white shadow-sm gap-2 hover:bg-[#e63d57] transition-all hover:shadow-md cursor-pointer"
+              className="inline-flex items-center justify-center rounded-2xl bg-[#ff4d67] px-6 py-4 text-base sm:text-lg font-semibold text-white shadow-lg shadow-pink-500/20 gap-3 hover:bg-[#e63d57] transition-all hover:shadow-xl hover:shadow-pink-500/30 hover:-translate-y-0.5 active:translate-y-0 cursor-pointer w-full sm:w-auto"
             >
-              Register Here
-              <ArrowRight className="h-5 w-5" />
+              <ClipboardList className="h-5 w-5 sm:h-6 sm:w-6" />
+              <span>Register Here</span>
+              <ArrowRight className="h-5 w-5 sm:h-6 sm:w-6" />
             </button>
           </div>
 
