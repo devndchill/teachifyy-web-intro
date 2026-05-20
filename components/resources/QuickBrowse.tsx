@@ -3,7 +3,6 @@
 import { useEffect, useState, useRef } from "react";
 import { Filter, ChevronLeft, ChevronRight } from "lucide-react";
 import { Resource, ResourceCard } from "./ResourceCarousel";
-import TeachersSpotlight from "./TeachersSpotlight";
 
 const CATEGORIES = [
   "All",
@@ -211,10 +210,7 @@ export default function QuickBrowse({ resources }: Props) {
         </div>
 
         {/* Resource sections — responsive row, arrow to page through extras */}
-        {Object.entries(grouped).map(([cat, items], index) => {
-          // Find if there's a spotlight resource in this first group or globally if active is All
-          const spotlightResource = resources?.find((r) => r.isSpotlight);
-
+        {Object.entries(grouped).map(([cat, items]) => {
           return (
             <div key={cat}>
               <div className="mb-10 sm:mb-14">
@@ -223,15 +219,6 @@ export default function QuickBrowse({ resources }: Props) {
                 </h2>
                 <PaginatedRow items={items} />
               </div>
-
-              {/* Show Spotlight after the first category when in "All" or if it's the middle of the list */}
-              {((active === "All" && index === 0) ||
-                (active !== "All" && items.length > 0 && index === 0)) &&
-                spotlightResource && (
-                  <div className="my-12 sm:my-20">
-                    <TeachersSpotlight resource={spotlightResource} />
-                  </div>
-                )}
             </div>
           );
         })}

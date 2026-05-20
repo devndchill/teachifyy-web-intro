@@ -20,9 +20,8 @@ const Footer = () => {
             </div>
           </Link>
           <p className="text-white/80 text-[14px] leading-[1.6] mb-8 font-medium">
-            Empowering future Educators with
-            <br className="hidden lg:block" />
-            structured, Application-Focused Training.
+            Empowering future Educators and students with
+            <br className="hidden lg:block" />structured, Application-Focused learning.
           </p>
           <div className="flex items-center gap-3">
             <a
@@ -88,7 +87,8 @@ const Footer = () => {
           <ul className="flex flex-col gap-4">
             {[
               { label: "Home", path: "/" },
-              { label: "Courses", path: "/courses" },
+              { label: "For Teachers", path: "/courses" },
+              { label: "For Students", path: "/forStudents" },
               { label: "Assessment", path: "/assessment" },
               { label: "Blogs", path: "/blog" },
               { label: "About Us", path: "/about" },

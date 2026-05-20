@@ -22,7 +22,7 @@ export default function TeachersSpotlight({ resource }: TeachersSpotlightProps) 
           {/* Left Content */}
           <div className="flex-1 text-left">
             <div className="inline-block bg-[#DDE6F2] text-[#2E5478] px-4 py-1.5 rounded-full text-[11px] font-bold tracking-wider mb-6 shadow-sm uppercase">
-              TEACHERS SPOTLIGHT
+              STUDENT SPOTLIGHT
             </div>
 
             <h2 className="text-[1.8rem] sm:text-[2.2rem] md:text-[2.6rem] lg:text-[3.2rem] font-bold text-white leading-[1.1] mb-6 tracking-tight">

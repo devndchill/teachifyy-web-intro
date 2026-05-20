@@ -9,11 +9,11 @@ import Image from "next/image";
 
 const navigation = [
   { name: "Home", href: "/" },
-  { name: "Courses", href: "/courses" },
+  { name: "For Teachers", href: "/courses" },
+  { name: "For Students", href: "/forStudents" },
   { name: "Blogs", href: "/blog" },
   { name: "About Us", href: "/about" },
   { name: "Contact Us", href: "/contact" },
-  { name: "Resources", href: "/resources" },
 ];
 
 const Header = () => {

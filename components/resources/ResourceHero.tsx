@@ -1,40 +1,85 @@
-import Link from "next/link";
+"use client";
+
+import { useState } from "react";
+import Image from "next/image";
 import { ArrowRight } from "lucide-react";
+import LeadDownloadModal from "./LeadDownloadModal";
 
 export default function ResourceHero() {
+  const [showModal, setShowModal] = useState(false);
+
+  const heroResource: any = {
+    id: null,
+    name: "THE INTERNATIONAL OLYMPIAD",
+    description: "Registration is open for standard 5-10th students across India",
+    age: "V-X",
+    category: "Brochure",
+    thumbnailUrl: "/assets/resourcesHero1.png",
+    documentUrl: "/assets/DownloadStaticFile.pdf",
+    isSpotlight: false,
+  };
+
   return (
-    <section className="relative overflow-hidden bg-white pt-16 pb-20">
-      {/* Background blobs — same as HeroSection */}
+    <section className="relative w-full overflow-hidden py-5 md:py-16">
+      {/* Background Layer with subtle peach and light blue glows */}
       <div className="absolute inset-0 z-0 pointer-events-none">
-        <div className="absolute bottom-[-20%] left-[-10%] w-[400px] h-[400px] md:w-[600px] md:h-[600px] bg-[#FFF0EA] rounded-full blur-[100px]" />
-        <div className="absolute bottom-[-20%] right-[-10%] w-[350px] h-[350px] md:w-[500px] md:h-[500px] bg-[#EBF3FC] rounded-full blur-[100px]" />
+        <div className="absolute bottom-[-10%] left-[-5%] w-[600px] h-[600px] bg-[#FFF0EA] rounded-full blur-[100px] opacity-100" />
+        <div className="absolute bottom-[-10%] right-[-5%] w-[500px] h-[500px] bg-[#EBF3FC] rounded-full blur-[100px] opacity-100" />
       </div>
 
-      <div className="container-custom relative z-10 max-w-[1248px] mx-auto px-6 lg:px-12">
-        {/* Badge */}
-        <div className="inline-flex items-center bg-[#DDE6F2] text-black text-[9px] sm:text-[10px] uppercase tracking-wider rounded-full px-4 sm:px-6 py-1.5 mb-5">
-          Inspired Teaching Starts Here
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          {/* Left Content */}
+          <div className="flex flex-col items-start max-w-xl">
+            {/* Badge */}
+            <div className="inline-flex items-center rounded-full border border-blue-100 bg-[#DDE6F2] px-4 py-1.5 shadow-sm mb-6">
+              <span className="text-[9px] sm:text-[10px]">For IB/ISCE/CBSE Students</span>
+            </div>
+
+            {/* Heading */}
+            <h1 className="text-2xl md:text-3xl lg:text-4xl font-light text-slate-900 mb-6 leading-[1.1]">
+              <span className="text-[#ff4d67] font-bold">THE INTERNATIONAL OLYMPIAD</span>
+              <br />
+              Registration is open for standard 5-10th students across India
+            </h1>
+
+            {/* Subtext */}
+            <p className="text-md md:text-lg text-slate-600 mb-8 max-w-md">
+              Your child can now get a chance to experience an educational trip to London
+            </p>
+
+            {/* CTA Button */}
+            <button
+              onClick={() => setShowModal(true)}
+              className="inline-flex items-center justify-center rounded-full bg-[#ff4d67] px-8 py-3.5 text-base font-medium text-white shadow-sm gap-2 hover:bg-[#e63d57] transition-all hover:shadow-md cursor-pointer"
+            >
+              Register Here
+              <ArrowRight className="h-5 w-5" />
+            </button>
+          </div>
+
+          {/* Right Content - Image */}
+          <div className="relative w-full max-w-[450px] h-[450px] mx-auto md:ml-auto rounded-[50px] overflow-hidden shadow-2xl">
+            <div className="absolute inset-0 bg-slate-200">
+              <Image
+                src="/assets/resourcesHero1.png"
+                alt="The International Olympiad Registration"
+                className="w-full h-full object-cover"
+                width={1200}
+                height={600}
+              />
+            </div>
+          </div>
         </div>
-
-        <h1 className="text-[2.2rem] sm:text-[2.8rem] md:text-[3.5rem] lg:text-[4rem] font-light text-gray-900 leading-[1.1] mb-5 max-w-full">
-          <span className="text-[#FF4D67] font-bold">Free resources</span> for
-          real
-          <br className="hidden sm:inline" />
-          classrooms
-        </h1>
-
-        {/* Sub-text */}
-        <p className="text-[16px] md:text-[17px] text-gray-500 mb-9 max-w-[440px] leading-relaxed">
-          Practical, ready-to-use materials for teachers
-        </p>
-
-        {/* CTA */}
-        <Link href="/courses">
-          <button className="inline-flex items-center gap-2 bg-[#FF4D67] text-white font-semibold text-[15px] px-7 py-3.5 rounded-full hover:bg-[#e63d57] transition-all shadow-[0_6px_24px_rgba(255,77,103,0.35)] hover:shadow-[0_8px_28px_rgba(255,77,103,0.45)] hover:-translate-y-0.5">
-            Premium Resources <ArrowRight className="w-4 h-4 stroke-[2.5]" />
-          </button>
-        </Link>
       </div>
+
+      {showModal && (
+        <LeadDownloadModal
+          resource={heroResource}
+          onClose={() => setShowModal(false)}
+        />
+      )}
     </section>
   );
 }
+

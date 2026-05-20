@@ -25,7 +25,9 @@ export default function LeadDownloadModal({ resource, onClose }: Props) {
   const [errors, setErrors] = useState<Record<string, string>>({});
   const { mutate: trackDownload, isPending } = useTrackDownloadMutation();
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+  ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
     if (errors[name]) {
@@ -35,11 +37,14 @@ export default function LeadDownloadModal({ resource, onClose }: Props) {
 
   const validate = () => {
     const newErrors: Record<string, string> = {};
-    if (!formData.fullName.trim()) newErrors.fullName = "Full Name is required";
+    if (!formData.fullName.trim()) newErrors.fullName = "Child Name is required";
     if (!formData.email.trim()) newErrors.email = "Email is required";
     else if (!/^\S+@\S+\.\S+$/.test(formData.email))
       newErrors.email = "Invalid email format";
     if (!formData.phone.trim()) newErrors.phone = "Phone is required";
+    if (!formData.age.trim()) newErrors.age = "Standard is required";
+    if (!formData.city.trim()) newErrors.city = "City is required";
+    if (!formData.profession.trim()) newErrors.profession = "School Name is required";
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -48,12 +53,22 @@ export default function LeadDownloadModal({ resource, onClose }: Props) {
     e.preventDefault();
     if (!validate()) return;
 
+    const ageMap: Record<string, string> = {
+      V: "5",
+      VI: "6",
+      VII: "7",
+      VIII: "8",
+      IX: "9",
+      X: "10",
+    };
+    const normalAge = ageMap[formData.age] || formData.age;
+
     trackDownload(
       {
         fullName: formData.fullName,
         email: formData.email,
         phone: formData.phone,
-        age: formData.age || null,
+        age: normalAge || null,
         city: formData.city || null,
         profession: formData.profession || null,
         qualifications: formData.qualifications || null,
@@ -119,7 +134,7 @@ export default function LeadDownloadModal({ resource, onClose }: Props) {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {/* Full Name */}
             <div>
-              <label htmlFor="dl-fullName" className={labelClasses}>Full Name</label>
+              <label htmlFor="dl-fullName" className={labelClasses}>Child Name</label>
               <input
                 type="text"
                 id="dl-fullName"
@@ -136,7 +151,7 @@ export default function LeadDownloadModal({ resource, onClose }: Props) {
 
             {/* Email */}
             <div>
-              <label htmlFor="dl-email" className={labelClasses}>Email Address</label>
+              <label htmlFor="dl-email" className={labelClasses}>Parents Email Id</label>
               <input
                 type="email"
                 id="dl-email"
@@ -153,7 +168,7 @@ export default function LeadDownloadModal({ resource, onClose }: Props) {
 
             {/* Phone */}
             <div>
-              <label htmlFor="dl-phone" className={labelClasses}>Phone Number</label>
+              <label htmlFor="dl-phone" className={labelClasses}>Parents Phone Number</label>
               <input
                 type="tel"
                 id="dl-phone"
@@ -170,15 +185,22 @@ export default function LeadDownloadModal({ resource, onClose }: Props) {
 
             {/* Age */}
             <div>
-              <label htmlFor="dl-age" className={labelClasses}>Age</label>
-              <input
-                type="number"
+              <label htmlFor="dl-age" className={labelClasses}>Standard</label>
+              <select
                 id="dl-age"
                 name="age"
                 value={formData.age}
                 onChange={handleChange}
                 className={inputClasses}
-              />
+              >
+                <option value="">Select Standard</option>
+                <option value="V">V</option>
+                <option value="VI">VI</option>
+                <option value="VII">VII</option>
+                <option value="VIII">VIII</option>
+                <option value="IX">IX</option>
+                <option value="X">X</option>
+              </select>
               {errors.age && (
                 <p className="text-red-500 text-[11px] mt-1 font-medium">{errors.age}</p>
               )}
@@ -202,14 +224,14 @@ export default function LeadDownloadModal({ resource, onClose }: Props) {
 
             {/* Profession */}
             <div>
-              <label htmlFor="dl-profession" className={labelClasses}>Profession</label>
+              <label htmlFor="dl-profession" className={labelClasses}>School Name</label>
               <input
                 type="text"
                 id="dl-profession"
                 name="profession"
                 value={formData.profession}
                 onChange={handleChange}
-                placeholder="e.g. Teacher, Student"
+                placeholder=""
                 className={inputClasses}
               />
               {errors.profession && (
@@ -219,7 +241,7 @@ export default function LeadDownloadModal({ resource, onClose }: Props) {
           </div>
 
           {/* Qualifications — full width */}
-          <div>
+          {/* <div>
             <label htmlFor="dl-qualifications" className={labelClasses}>Question</label>
             <input
               type="text"
@@ -232,7 +254,7 @@ export default function LeadDownloadModal({ resource, onClose }: Props) {
             {errors.qualifications && (
               <p className="text-red-500 text-[11px] mt-1 font-medium">{errors.qualifications}</p>
             )}
-          </div>
+          </div> */}
 
           <Button
             type="submit"
